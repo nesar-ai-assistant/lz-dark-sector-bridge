@@ -30,6 +30,10 @@ output/
 *.npz
 *.csv
 
+# But keep analysis plots
+!analysis/output/
+!analysis/output/*.png
+
 # Testing
 .pytest_cache/
 .coverage
