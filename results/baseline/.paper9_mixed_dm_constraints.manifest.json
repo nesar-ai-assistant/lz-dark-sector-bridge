@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "output_id": "paper9_mixed_dm_constraints",
+  "universe_id": "baseline",
+  "recipe": "python3 analysis/paper9_solar_capture_analysis.py --out results/baseline/paper9_mixed_dm_constraints.png",
+  "definition_version": "sha256:51f50e1dc7035dad7505f4d273a533f6df477f46bbf5d828f78ba6d03e084668",
+  "env_version": "sha256:97a1b91a5005b0cd643c0471b540bea40eb4bd79a36640104997517966a76bd4",
+  "data_version": "sha256:f01c742cc842a59ae7544f8e73d69a6c945595d9de1db2cbb95ae44c82f8c4d4",
+  "decisions": {
+    "post_capture_cooling": "include_all_three",
+    "neff_scenario": "sm_plus_sterile_plus_wimp",
+    "mixed_dm_grid": "grid_60"
+  },
+  "input_versions": {
+    "paper9_pdf": "sha256:212e668236f85d65707f2fd4b8a9f22be8d7a6aafaec1c4eed8c6b402c5c2d88",
+    "physics_engine": "sha256:df4ec8073544be4943f43a42486818725506d2d86222bfd000c55f37cb43a701",
+    "paper9_script": "sha256:9bfaf1050c90eee380157ae42f36e5e99310be325f85767b3cc6d6071dc8d38f"
+  },
+  "git_sha": "e4de051ab31fbc67451d22c65e1a99e86da2eba6",
+  "git_remote": "git@github.com:nesar-ai-assistant/lz-dark-sector-bridge.git",
+  "lc_version": "0.5.0",
+  "hermeticity": {
+    "mechanism": "seatbelt",
+    "fs": "declared",
+    "network": "allowed",
+    "landlock_abi": null,
+    "exec_allowlist_version": 1
+  },
+  "started_at": "2026-11-13T21:10:09.071+00:00",
+  "finished_at": "2026-11-13T21:10:17.685+00:00",
+  "uv_version": "0.12.5",
+  "image": null
+}

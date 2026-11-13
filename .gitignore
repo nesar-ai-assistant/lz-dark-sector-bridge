@@ -30,9 +30,12 @@ output/
 *.npz
 *.csv
 
-# But keep analysis plots
+# But keep analysis plots and Lightcone outputs
 !analysis/output/
 !analysis/output/*.png
+!results/
+!results/**/*.png
+!results/**/.paper*.manifest.json
 
 # Testing
 .pytest_cache/
