@@ -41,3 +41,8 @@ htmlcov/
 
 # Jupyter
 .ipynb_checkpoints/
+
+# lightcone-cli
+.lightcone/
+_build/
+chats/

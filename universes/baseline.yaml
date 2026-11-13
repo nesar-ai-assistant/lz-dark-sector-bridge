@@ -1,0 +1,6 @@
+id: baseline
+description: "Baseline — all three cooling scenarios, full N_eff stack, 60×60 mixed-DM grid (matches committed figures)"
+decisions:
+  post_capture_cooling: include_all_three
+  neff_scenario: sm_plus_sterile_plus_wimp
+  mixed_dm_grid: grid_60

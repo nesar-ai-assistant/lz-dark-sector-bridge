@@ -1,0 +1,140 @@
+# ASTRA Analysis Specification — LZ Dark Sector Bridge: Paper 9 (Solar Capture)
+
+version: "0.0.14"
+name: "LZ Dark Sector Bridge — Paper 9 Solar Capture"
+description: >-
+  Reproduction of the solar-capture test of inelastic dark matter after the
+  248 keV LZ nuclear-recoil candidate (Di Mauro & Shaikh 2026,
+  arXiv:2609.06760; paper 09_Solar_Capture_Inelastic_DM_LZ.pdf in papers/).
+  Uses the project's physics engine (tools/physics.py) to (a) model the
+  endothermic solar-capture rate vs. mass splitting δ, (b) evaluate IceCube
+  annihilation-rate limits in three post-capture cooling scenarios, (c) show
+  the mixed-DM (WIMP + sterile-ν) χ² constraint plane after Higgsino
+  exclusion, and (d) overlay BBN Y_p/D/H predictions vs. N_eff for three
+  scenarios. Scripts live in analysis/; figures are committed to
+  analysis/output/ (the repo's .gitignore excludes *.png elsewhere but
+  explicitly re-includes analysis/output/*.png).
+
+inputs:
+  - id: paper9_pdf
+    type: data
+    description: Paper 9 PDF (Di Mauro & Shaikh 2026, arXiv:2609.06760)
+    source: papers/09_Solar_Capture_Inelastic_DM_LZ.pdf
+
+  - id: lz_eft_paper
+    type: data
+    description: LZ EFT nuclear-recoil search (Sep 1, 2026) — the 248 keV event definition
+    source: papers/01_LZ_2026_EFT_Nuclear_Recoil_Search.pdf
+
+  - id: papers_collection_notes
+    type: data
+    description: papers/README.md — curated mapping of all 12 papers and key bridge themes
+    source: papers/README.md
+
+  - id: physics_engine
+    type: data
+    description: Self-contained physics engine (BBN, WIMP, sterile-ν, joint χ², scan)
+    source: tools/physics.py
+
+  - id: bridge_tools
+    type: data
+    description: MCP bridge tool wrappers over the physics engine
+    source: tools/lz_bridge_tools.py
+
+  - id: paper9_script
+    type: data
+    description: Paper 9 analysis driver producing the four figures and numerical summary
+    source: analysis/paper9_solar_capture_analysis.py
+
+outputs:
+  - id: paper9_solar_capture_vs_splitting
+    type: figure
+    format: png
+    description: Log capture rate C_⊙ vs. δ with IceCube 2Γ_lim bands, LZ δ markers, gold LZ band
+    inputs: [paper9_pdf, physics_engine, paper9_script]
+    decisions: [post_capture_cooling, neff_scenario]
+    recipe:
+      command: >-
+        python3 analysis/paper9_solar_capture_analysis.py
+
+  - id: paper9_higgsino_exclusion
+    type: figure
+    format: png
+    description: Annihilation rate Γ_A(δ) for Higgsino in three cooling scenarios vs. IceCube WW/bb limits; exclusion arrows
+    inputs: [paper9_pdf, physics_engine, paper9_script]
+    decisions: [post_capture_cooling, neff_scenario]
+    recipe:
+      command: >-
+        python3 analysis/paper9_solar_capture_analysis.py
+
+  - id: paper9_mixed_dm_constraints
+    type: figure
+    format: png
+    description: 2D χ² plane in (f_WIMP, f_sterile) after Higgsino exclusion; budget triangle, PQ band, pure-Higgsino stripe
+    inputs: [paper9_pdf, physics_engine, paper9_script]
+    decisions: [post_capture_cooling, neff_scenario, mixed_dm_grid]
+    recipe:
+      command: >-
+        python3 analysis/paper9_solar_capture_analysis.py
+
+  - id: paper9_bbn_predictions
+    type: figure
+    format: png
+    description: BBN Y_p and D/H vs. N_eff (Pitrou+ 2018) with SM / SM+ν_s / SM+WIMP+ν_s markers, Planck 2σ band
+    inputs: [paper9_pdf, physics_engine, paper9_script]
+    decisions: [post_capture_cooling, neff_scenario]
+    recipe:
+      command: >-
+        python3 analysis/paper9_solar_capture_analysis.py
+
+decisions:
+  post_capture_cooling:
+    label: Post-capture thermalization / cooling scenario for the captured Higgsino population
+    rationale: >-
+      Which effective solar radius R_χ (equivalently which late-time cooling
+      physics: tree-level stall vs. SD loop cooling vs. SI+SD full
+      thermalization) sets the annihilation volume and thus Γ_A. The paper
+      compares exactly these three cases (Fig. 2 → our Plot 2).
+    default: include_all_three
+    options:
+      include_all_three:
+        label: Include all three curves (stall / SD-loop / thermalized) as in the paper
+      stall_only:
+        label: Tree-level stall only (R_χ ≈ 0.20 R_⊙)
+
+  neff_scenario:
+    label: Which dark-sector ΔN_eff contributions are added to BBN N_eff
+    rationale: >-
+      WIMP mass here is ~1 TeV so its own ΔN_eff is ~0; the sterile ν (7 keV,
+      sin²2θ ~ 7×10⁻¹¹) contributes ΔN_eff ~ 0.01. The code evaluates three
+      scenarios explicitly (SM, SM+ν_s, SM+WIMP+ν_s) in Plot 4.
+    default: sm_plus_sterile_plus_wimp
+    options:
+      sm_only:
+        label: SM only (N_eff = 3.044)
+      sm_plus_sterile:
+        label: SM + 7 keV sterile neutrino
+      sm_plus_sterile_plus_wimp:
+        label: SM + sterile + 1.08 TeV WIMP (as rendered)
+
+  mixed_dm_grid:
+    label: Resolution of the mixed-DM χ² scan
+    rationale: >-
+      Paper9 script uses a 60×60 grid over (f_WIMP, f_sterile) ∈ [0.01, 1]²
+      evaluated via tools.physics.joint_chi2. Coarser grid speeds iteration;
+      finer grid is more publication-ready.
+    default: grid_60
+    options:
+      grid_60:
+        label: 60 × 60 (current default)
+      grid_120:
+        label: 120 × 120 (high-resolution variant)
+
+prior_insights: {}
+
+findings: {}
+
+analyses: {}
+
+# No container: run locally (or inside lc when materialized). Add one once
+# there is a pinned Docker/Apptainer image for this analysis.

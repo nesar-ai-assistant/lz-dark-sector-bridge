@@ -117,6 +117,55 @@ These repositories host the sterile‑neutrino physics backend used by this brid
 
 ---
 
+## Analysis Provenance — Paper 9 (Solar Capture, Di Mauro & Shaikh 2026)
+
+This repo ships a full **ASTRA + Lightcone** reproducibility record for Paper 9
+(`papers/09_Solar_Capture_Inelastic_DM_LZ.pdf`, arXiv:2609.06760): solar‑capture
+tests of inelastic DM after the 248 keV LZ event.
+
+| Item | Where | What it is |
+|------|-------|-----------|
+| `astra.yaml` | repo root | Declarative spec — 6 inputs, 4 outputs, 3 decisions. Run `astra validate && astra info` to inspect. |
+| `universes/baseline.yaml` | `universes/` | Baseline universe (all‑three cooling curves, SM+ν_s+WIMP N_eff, 60×60 mixed‑DM grid) — the one that produced the committed figures. |
+| `analysis/paper9_solar_capture_analysis.py` | `analysis/` | Single driver emitting 4 figures + numerical summary (∆N_eff, exclusion limits). See `tools/physics.py` for the engine. |
+| `analysis/output/*.png` | `analysis/output/` | Rendered figures (kept in git via `.gitignore` exception). |
+| `data/` / `results/` | `data/`, `results/` | Lightcone conventions: declared inputs under `data/` (git‑annex when large), materialized outputs under `results/<universe>/<output>.<format>` with sidecar `.<output>.manifest.json`. |
+| `myst.yml` + `index.md` + `uv.lock` | repo root | MyST report (MySTRA plugin resolves `{astra}…` refs against `astra.yaml`) + pinned Python env (3.12.14). Preview with `myst start`. |
+
+### Quick start (Lightcone)
+
+```bash
+# inspect the ASTRA record
+astra validate
+astra info
+
+# what would (re)materialize and why
+lc status
+lc materialize --check
+
+# materialize all 4 Paper-9 outputs on the local offer (no cluster config needed)
+# — each commit records the producing command + manifest; content-identical rebuilds short-circuit
+lc compute launch local --help   # optional: tune CPUs/memory
+lc materialize local
+
+# preview the paper report (resolves every figure/decision from astra.yaml — no hard-coded values)
+myst start   # then open http://localhost:3000
+```
+
+### Lightcone toggle (Hermes birds)
+
+Most documentation is now kept through Lightcone products. A global toggle controls it:
+
+```bash
+hermes config get lightcone.enabled   # true (default) | false
+hermes config set lightcone.enabled false   # skip ASTRA/lc docs path
+hermes config set lightcone.enabled true    # resume
+```
+
+> `astra` 0.2.18 + `lightcone-cli` 0.5.0 (via `uv tool install`). Format is still `0.0.14` (pre‑1.0, expect bumps — `uv.lock` pins the env). See the `lightcone-docs` skill (`~/.hermes/skills/lightcone-docs/SKILL.md`) for the per‑repo workflow.
+
+---
+
 ## CI Badges (placeholders)
 
 [![CI](https://github.com/nesar-ai-assistant/lz-dark-sector-bridge/actions/workflows/ci.yml/badge.svg)](https://github.com/nesar-ai-assistant/lz-dark-sector-bridge/actions/workflows/ci.yml)
