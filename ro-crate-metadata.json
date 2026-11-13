@@ -1,0 +1,305 @@
+{
+ "@context": [
+  "https://w3id.org/ro/crate/1.3/context",
+  "https://w3id.org/ro/terms/workflow-run"
+ ],
+ "@graph": [
+  {
+   "@id": "./",
+   "@type": "Dataset",
+   "author": {
+    "@id": "mailto:nesar1202@gmail.com"
+   },
+   "conformsTo": [
+    {
+     "@id": "https://w3id.org/ro/wfrun/process/0.5"
+    },
+    {
+     "@id": "https://w3id.org/ro/wfrun/workflow/0.5"
+    },
+    {
+     "@id": "https://w3id.org/ro/wfrun/provenance/0.5"
+    },
+    {
+     "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+    }
+   ],
+   "datePublished": "2026-11-13",
+   "description": "Reproduction of the solar-capture test of inelastic dark matter after the 248 keV LZ nuclear-recoil candidate (Di Mauro & Shaikh 2026, arXiv:2609.06760; paper 09_Solar_Capture_Inelastic_DM_LZ.pdf in papers/). Uses the project's physics engine (tools/physics.py) to (a) model the endothermic solar-capture rate vs. mass splitting δ, (b) evaluate IceCube annihilation-rate limits in three post-capture cooling scenarios, (c) show the mixed-DM (WIMP + sterile-ν) χ² constraint plane after Higgsino exclusion, and (d) overlay BBN Y_p/D/H predictions vs. N_eff for three scenarios. Scripts live in analysis/; figures are committed to analysis/output/ (the repo's .gitignore excludes *.png elsewhere but explicitly re-includes analysis/output/*.png).",
+   "hasPart": [
+    {
+     "@id": "astra.yaml"
+    },
+    {
+     "@id": "pyproject.toml"
+    },
+    {
+     "@id": "uv.lock"
+    },
+    {
+     "@id": ".python-version"
+    },
+    {
+     "@id": "universes/baseline.yaml"
+    },
+    {
+     "@id": "README.md"
+    }
+   ],
+   "license": {
+    "@id": "#license"
+   },
+   "mainEntity": {
+    "@id": "astra.yaml"
+   },
+   "name": "LZ Dark Sector Bridge — Paper 9 Solar Capture"
+  },
+  {
+   "@id": "ro-crate-metadata.json",
+   "@type": "CreativeWork",
+   "about": {
+    "@id": "./"
+   },
+   "conformsTo": [
+    {
+     "@id": "https://w3id.org/ro/crate/1.1"
+    },
+    {
+     "@id": "https://w3id.org/ro/crate/1.2"
+    }
+   ]
+  },
+  {
+   "@id": "#astra",
+   "@type": "ComputerLanguage",
+   "alternateName": "Agentic Schema for Transparent Research Analysis",
+   "name": "ASTRA",
+   "url": "https://pypi.org/project/astra-tools/"
+  },
+  {
+   "@id": "astra.yaml",
+   "@type": [
+    "File",
+    "SoftwareSourceCode",
+    "ComputationalWorkflow",
+    "HowTo"
+   ],
+   "conformsTo": {
+    "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE"
+   },
+   "creator": {
+    "@id": "mailto:nesar1202@gmail.com"
+   },
+   "dateCreated": "2026-11-13",
+   "description": "Reproduction of the solar-capture test of inelastic dark matter after the 248 keV LZ nuclear-recoil candidate (Di Mauro & Shaikh 2026, arXiv:2609.06760; paper 09_Solar_Capture_Inelastic_DM_LZ.pdf in papers/). Uses the project's physics engine (tools/physics.py) to (a) model the endothermic solar-capture rate vs. mass splitting δ, (b) evaluate IceCube annihilation-rate limits in three post-capture cooling scenarios, (c) show the mixed-DM (WIMP + sterile-ν) χ² constraint plane after Higgsino exclusion, and (d) overlay BBN Y_p/D/H predictions vs. N_eff for three scenarios. Scripts live in analysis/; figures are committed to analysis/output/ (the repo's .gitignore excludes *.png elsewhere but explicitly re-includes analysis/output/*.png).",
+   "encodingFormat": "application/yaml",
+   "hasPart": [
+    {
+     "@id": "urn:uuid:2f7c09db-fab3-5795-8641-827cb0732a02"
+    },
+    {
+     "@id": "urn:uuid:8e219ce3-fb64-5e7e-9706-50085ea4f945"
+    },
+    {
+     "@id": "urn:uuid:3c42b976-3c14-525e-9d78-a4eddb3508b5"
+    },
+    {
+     "@id": "urn:uuid:ab12a5ec-f8d8-556b-8d45-25a0e6767dc4"
+    }
+   ],
+   "input": [
+    {
+     "@id": "#param-mixed_dm_grid"
+    },
+    {
+     "@id": "#param-neff_scenario"
+    },
+    {
+     "@id": "#param-post_capture_cooling"
+    }
+   ],
+   "license": {
+    "@id": "#license"
+   },
+   "name": "LZ Dark Sector Bridge — Paper 9 Solar Capture",
+   "programmingLanguage": {
+    "@id": "#astra"
+   },
+   "step": [
+    {
+     "@id": "#step-paper9_bbn_predictions"
+    },
+    {
+     "@id": "#step-paper9_higgsino_exclusion"
+    },
+    {
+     "@id": "#step-paper9_mixed_dm_constraints"
+    },
+    {
+     "@id": "#step-paper9_solar_capture_vs_splitting"
+    }
+   ],
+   "version": "8547205"
+  },
+  {
+   "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.1",
+   "@type": [
+    "CreativeWork",
+    "Profile"
+   ],
+   "name": "Workflow RO-Crate",
+   "version": "1.1"
+  },
+  {
+   "@id": "#license",
+   "@type": "CreativeWork",
+   "name": "MIT"
+  },
+  {
+   "@id": "mailto:nesar1202@gmail.com",
+   "@type": "Person",
+   "email": "nesar1202@gmail.com",
+   "name": "Nesar Ramachandra"
+  },
+  {
+   "@id": "#param-mixed_dm_grid",
+   "@type": "FormalParameter",
+   "additionalType": "Text",
+   "name": "mixed_dm_grid"
+  },
+  {
+   "@id": "#param-neff_scenario",
+   "@type": "FormalParameter",
+   "additionalType": "Text",
+   "name": "neff_scenario"
+  },
+  {
+   "@id": "#param-post_capture_cooling",
+   "@type": "FormalParameter",
+   "additionalType": "Text",
+   "name": "post_capture_cooling"
+  },
+  {
+   "@id": "urn:uuid:2f7c09db-fab3-5795-8641-827cb0732a02",
+   "@type": "SoftwareApplication",
+   "description": "the recipe of output `paper9_bbn_predictions`",
+   "name": "paper9_bbn_predictions",
+   "softwareVersion": "8547205"
+  },
+  {
+   "@id": "#step-paper9_bbn_predictions",
+   "@type": "HowToStep",
+   "position": 0,
+   "workExample": {
+    "@id": "urn:uuid:2f7c09db-fab3-5795-8641-827cb0732a02"
+   }
+  },
+  {
+   "@id": "urn:uuid:8e219ce3-fb64-5e7e-9706-50085ea4f945",
+   "@type": "SoftwareApplication",
+   "description": "the recipe of output `paper9_higgsino_exclusion`",
+   "name": "paper9_higgsino_exclusion",
+   "softwareVersion": "8547205"
+  },
+  {
+   "@id": "#step-paper9_higgsino_exclusion",
+   "@type": "HowToStep",
+   "position": 1,
+   "workExample": {
+    "@id": "urn:uuid:8e219ce3-fb64-5e7e-9706-50085ea4f945"
+   }
+  },
+  {
+   "@id": "urn:uuid:3c42b976-3c14-525e-9d78-a4eddb3508b5",
+   "@type": "SoftwareApplication",
+   "description": "the recipe of output `paper9_mixed_dm_constraints`",
+   "name": "paper9_mixed_dm_constraints",
+   "softwareVersion": "8547205"
+  },
+  {
+   "@id": "#step-paper9_mixed_dm_constraints",
+   "@type": "HowToStep",
+   "position": 2,
+   "workExample": {
+    "@id": "urn:uuid:3c42b976-3c14-525e-9d78-a4eddb3508b5"
+   }
+  },
+  {
+   "@id": "urn:uuid:ab12a5ec-f8d8-556b-8d45-25a0e6767dc4",
+   "@type": "SoftwareApplication",
+   "description": "the recipe of output `paper9_solar_capture_vs_splitting`",
+   "name": "paper9_solar_capture_vs_splitting",
+   "softwareVersion": "8547205"
+  },
+  {
+   "@id": "#step-paper9_solar_capture_vs_splitting",
+   "@type": "HowToStep",
+   "position": 3,
+   "workExample": {
+    "@id": "urn:uuid:ab12a5ec-f8d8-556b-8d45-25a0e6767dc4"
+   }
+  },
+  {
+   "@id": "pyproject.toml",
+   "@type": "File",
+   "contentSize": "809",
+   "encodingFormat": "application/toml",
+   "sha256": "cc49d77088c9c71693e9d842e7b80bdbd36b4543494de3ad2ec77afe9c6f92b4"
+  },
+  {
+   "@id": "uv.lock",
+   "@type": "File",
+   "contentSize": "961436",
+   "encodingFormat": "application/toml",
+   "sha256": "876b1b82a26f52001fa3c81e5cb498bdbf54796fd272b4c9095d0bad1511c595"
+  },
+  {
+   "@id": ".python-version",
+   "@type": "File",
+   "contentSize": "8",
+   "encodingFormat": "text/plain",
+   "sha256": "f50159fad3f4319868eb38717b91d55843c41e9803014c8de05e116a6d0bcfdc"
+  },
+  {
+   "@id": "universes/baseline.yaml",
+   "@type": "File",
+   "contentSize": "258",
+   "encodingFormat": "application/yaml",
+   "sha256": "43f03c4dfab46cc5c7c57c777981aa51330fd8d330ddfef2f72de52a9d359507"
+  },
+  {
+   "@id": "README.md",
+   "@type": "File",
+   "about": {
+    "@id": "./"
+   },
+   "contentSize": "10224",
+   "encodingFormat": "text/markdown",
+   "sha256": "5ec25cc50fc942da61dd6e182b969440304c90813aca22868b5c78481087a12f"
+  },
+  {
+   "@id": "https://w3id.org/ro/wfrun/process/0.5",
+   "@type": "CreativeWork",
+   "name": "Process Run Crate 0.5",
+   "version": "0.5"
+  },
+  {
+   "@id": "https://w3id.org/ro/wfrun/workflow/0.5",
+   "@type": "CreativeWork",
+   "name": "Workflow Run Crate 0.5",
+   "version": "0.5"
+  },
+  {
+   "@id": "https://w3id.org/ro/wfrun/provenance/0.5",
+   "@type": "CreativeWork",
+   "name": "Provenance Run Crate 0.5",
+   "version": "0.5"
+  },
+  {
+   "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0",
+   "@type": "CreativeWork",
+   "name": "Workflow RO-Crate 1.0",
+   "version": "1.0"
+  }
+ ]
+}
