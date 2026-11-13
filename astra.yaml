@@ -55,7 +55,7 @@ outputs:
     decisions: [post_capture_cooling, neff_scenario]
     recipe:
       command: >-
-        python3 analysis/paper9_solar_capture_analysis.py
+        python3 analysis/paper9_solar_capture_analysis.py --out {output}
 
   - id: paper9_higgsino_exclusion
     type: figure
@@ -65,7 +65,7 @@ outputs:
     decisions: [post_capture_cooling, neff_scenario]
     recipe:
       command: >-
-        python3 analysis/paper9_solar_capture_analysis.py
+        python3 analysis/paper9_solar_capture_analysis.py --out {output}
 
   - id: paper9_mixed_dm_constraints
     type: figure
@@ -75,7 +75,7 @@ outputs:
     decisions: [post_capture_cooling, neff_scenario, mixed_dm_grid]
     recipe:
       command: >-
-        python3 analysis/paper9_solar_capture_analysis.py
+        python3 analysis/paper9_solar_capture_analysis.py --out {output}
 
   - id: paper9_bbn_predictions
     type: figure
@@ -85,7 +85,7 @@ outputs:
     decisions: [post_capture_cooling, neff_scenario]
     recipe:
       command: >-
-        python3 analysis/paper9_solar_capture_analysis.py
+        python3 analysis/paper9_solar_capture_analysis.py --out {output}
 
 decisions:
   post_capture_cooling:

@@ -21,8 +21,33 @@ plt.rcParams.update({
     'axes.grid': True, 'grid.alpha': 0.3,
 })
 
+import argparse
+_parser = argparse.ArgumentParser(description='Paper 9 solar capture analysis (ASTRA/Lightcone-aware)')
+_parser.add_argument('--out', dest='out', default=None, help='Single-figure output path (when run via `lc` astra recipe with {output}; overrides OUTDIR per-figure)')
+_args, _unknown = _parser.parse_known_args()
+_SINGLE_OUT = _args.out  # when set, only the requested figure is written, and to that exact path
+
 OUTDIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'output')
 os.makedirs(OUTDIR, exist_ok=True)
+
+_SAVEFIG_MAP = {
+    'paper9_solar_capture_vs_splitting': 'solar_capture_vs_splitting.png',
+    'paper9_higgsino_exclusion': 'higgsino_exclusion_delta.png',
+    'paper9_mixed_dm_constraints': 'mixed_dm_after_higgsino_exclusion.png',
+    'paper9_bbn_predictions': 'neff_bbn_three_scenarios.png',
+}
+def _savefig(fig, filename):
+    if _SINGLE_OUT is not None:
+        req = os.path.basename(os.path.abspath(_SINGLE_OUT))
+        req_key = req[:-4] if req.endswith('.png') else req
+        mapped = _SAVEFIG_MAP.get(req_key, req)
+        if filename != mapped and filename != req:
+            plt.close(fig)
+            return
+        os.makedirs(os.path.dirname(os.path.abspath(_SINGLE_OUT)) or '.', exist_ok=True)
+        fig.savefig(_SINGLE_OUT)
+        return
+    fig.savefig(os.path.join(OUTDIR, filename))
 
 t_sun = 4.57e9 * 3.156e7
 R_sun = 6.957e10
@@ -79,7 +104,7 @@ ax.set_title('Solar Capture Rate vs. Endothermic Splitting\n(Di Mauro & Shaikh 2
 ax.set_xlim(200, 600); ax.set_ylim(1e10, 1e26)
 ax.legend(loc='upper right', fontsize=9, framealpha=0.9)
 fig.tight_layout()
-fig.savefig(os.path.join(OUTDIR, 'solar_capture_vs_splitting.png'))
+_savefig(fig, 'solar_capture_vs_splitting.png')
 plt.close(fig)
 print("  -> solar_capture_vs_splitting.png")
 
@@ -126,7 +151,7 @@ ax.set_title('Higgsino Solar Neutrino Constraint\n(Three post-capture cooling sc
 ax.set_xlim(300, 590); ax.set_ylim(1e10, 5e22)
 ax.legend(loc='upper right', fontsize=9, framealpha=0.9)
 fig.tight_layout()
-fig.savefig(os.path.join(OUTDIR, 'higgsino_exclusion_delta.png'))
+_savefig(fig, 'higgsino_exclusion_delta.png')
 plt.close(fig)
 print("  -> higgsino_exclusion_delta.png")
 
@@ -171,7 +196,7 @@ ax.set_title('Mixed DM Constraints After Higgsino Solar Exclusion\n'
 ax.set_xlim(0, 1.05); ax.set_ylim(0, 1.05)
 ax.legend(loc='lower left', fontsize=8.5, framealpha=0.9)
 fig.tight_layout()
-fig.savefig(os.path.join(OUTDIR, 'mixed_dm_after_higgsino_exclusion.png'))
+_savefig(fig, 'mixed_dm_after_higgsino_exclusion.png')
 plt.close(fig)
 print("  -> mixed_dm_after_higgsino_exclusion.png")
 
@@ -220,7 +245,7 @@ ax2.set_ylabel(r'D/H $\times 10^5$')
 ax2.set_xlim(2.5, 4.5); ax2.set_ylim(2.2, 3.2)
 ax2.legend(loc='upper left', fontsize=9, framealpha=0.9)
 fig.tight_layout()
-fig.savefig(os.path.join(OUTDIR, 'neff_bbn_three_scenarios.png'))
+_savefig(fig, 'neff_bbn_three_scenarios.png')
 plt.close(fig)
 print("  -> neff_bbn_three_scenarios.png")
 
