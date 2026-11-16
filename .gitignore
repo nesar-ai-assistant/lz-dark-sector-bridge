@@ -49,3 +49,5 @@ htmlcov/
 .lightcone/
 _build/
 chats/
+!docs/
+!docs/**

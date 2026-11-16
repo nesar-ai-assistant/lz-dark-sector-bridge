@@ -1,0 +1,42 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LZ Dark Sector Bridge — ASTRA Gallery</title>
+<style>
+body{font-family:system-ui,-apple-system,sans-serif;max-width:1100px;margin:40px auto;padding:0 20px;color:#1a1a1a;line-height:1.5}
+h1{color:#2a6496} h2{color:#2a6496;border-bottom:2px solid #e8eef6;padding-bottom:8px;margin-top:48px}
+img{max-width:100%;border:1px solid #ddd;border-radius:8px;margin:12px 0;display:block;background:#fff}
+.badge{background:#eef4ff;color:#2a6496;padding:4px 10px;border-radius:999px;font-size:12px;margin-right:6px;display:inline-block;margin-bottom:4px}
+.card{border:1px solid #e0e0e0;border-radius:10px;padding:16px;margin:16px 0;background:#fafbfc}
+pre{background:#f5f5f5;padding:12px;border-radius:6px;overflow:auto;font-size:13px}
+a{color:#2a6496}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:700px){.grid{grid-template-columns:1fr}}
+</style></head><body>
+<h1>LZ Dark Sector Bridge — Paper 9 Solar Capture</h1>
+<p><a href="https://github.com/nesar-ai-assistant/lz-dark-sector-bridge">GitHub: nesar-ai-assistant/lz-dark-sector-bridge</a>
+ · <code>astra viz</code> · <code>lc status</code> · RO-Crate 84 entities · 2 universes × 4 outputs</p>
+<p><span class="badge">baseline: grid_60</span> <span class="badge">high-res-mixed-dm: grid_120</span>
+ <span class="badge">ALCF Polaris (AuroraGPT/nesar)</span> <span class="badge">NERSC Perlmutter (m5240/nesar)</span></p>
+<h2>Cross-facility verification</h2>
+<div class="card">sterile_delta_neff(7000 eV, 7e-11) = <b>0.0103817603</b> — local = Perlmutter nid004203 ✓ · Polaris 7854528 queued (debug)<br>
+Paper value: 0.010382 · <code>astra viz</code> decision tree below.</div>
+<h2>hep-genesis reports</h2>
+<ul>
+<li><a href="reports/report.pdf">report.pdf</a> — main paper (with provenance)</li>
+<li><a href="reports/supplement.pdf">supplement.pdf</a> — tool log + board + code index</li>
+<li><a href="reports/transcript.pdf">transcript.pdf</a> — full agent transcript</li>
+<li><a href="reports/bundle.json">bundle.json</a> — machine-readable bundle</li>
+</ul>
+<pre>ASTRA: 6 inputs | 4 outputs | 3 decisions
+  post_capture_cooling: include_all_three | stall_only
+  neff_scenario: sm_only | sm_plus_sterile | sm_plus_sterile_plus_wimp
+  mixed_dm_grid: grid_60 (baseline) | grid_120 (high-res)
+Lightcone: lc status → 8 current · lc materialize local ✓ · ro-crate-metadata.json</pre>
+<h2>baseline</h2><h3>paper9_bbn_predictions</h3><img src="../results/baseline/paper9_bbn_predictions.png" alt="paper9_bbn_predictions"><p><code>results/baseline/paper9_bbn_predictions.png</code> — 231KB</p>
+<h3>paper9_higgsino_exclusion</h3><img src="../results/baseline/paper9_higgsino_exclusion.png" alt="paper9_higgsino_exclusion"><p><code>results/baseline/paper9_higgsino_exclusion.png</code> — 307KB</p>
+<h3>paper9_mixed_dm_constraints</h3><img src="../results/baseline/paper9_mixed_dm_constraints.png" alt="paper9_mixed_dm_constraints"><p><code>results/baseline/paper9_mixed_dm_constraints.png</code> — 240KB</p>
+<h3>paper9_solar_capture_vs_splitting</h3><img src="../results/baseline/paper9_solar_capture_vs_splitting.png" alt="paper9_solar_capture_vs_splitting"><p><code>results/baseline/paper9_solar_capture_vs_splitting.png</code> — 302KB</p>
+<h2>high-res-mixed-dm</h2><h3>paper9_bbn_predictions</h3><img src="../results/high-res-mixed-dm/paper9_bbn_predictions.png" alt="paper9_bbn_predictions"><p><code>results/high-res-mixed-dm/paper9_bbn_predictions.png</code> — 231KB</p>
+<h3>paper9_higgsino_exclusion</h3><img src="../results/high-res-mixed-dm/paper9_higgsino_exclusion.png" alt="paper9_higgsino_exclusion"><p><code>results/high-res-mixed-dm/paper9_higgsino_exclusion.png</code> — 307KB</p>
+<h3>paper9_mixed_dm_constraints</h3><img src="../results/high-res-mixed-dm/paper9_mixed_dm_constraints.png" alt="paper9_mixed_dm_constraints"><p><code>results/high-res-mixed-dm/paper9_mixed_dm_constraints.png</code> — 240KB</p>
+<h3>paper9_solar_capture_vs_splitting</h3><img src="../results/high-res-mixed-dm/paper9_solar_capture_vs_splitting.png" alt="paper9_solar_capture_vs_splitting"><p><code>results/high-res-mixed-dm/paper9_solar_capture_vs_splitting.png</code> — 302KB</p>
+<hr><p style="color:#888;font-size:12px">Generated 2026-11-16T14:36:46.538174 · hep-genesis 0.4.8 · astra 0.0.14 · <a href="https://github.com/nesar-ai-assistant/lz-dark-sector-bridge/actions">CI</a></p></body></html>

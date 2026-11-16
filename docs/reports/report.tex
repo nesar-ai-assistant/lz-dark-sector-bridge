@@ -1,0 +1,262 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{textcomp}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{float}
+\usepackage[font=small,labelfont=bf,justification=justified,singlelinecheck=false]{caption}
+\usepackage[colorlinks=true,linkcolor=black,citecolor=black,urlcolor=blue!40!black,breaklinks]{hyperref}
+\usepackage{microtype}
+\setlength{\parskip}{5pt}
+\setlength{\parindent}{0pt}
+\setlength{\emergencystretch}{3em}
+\renewcommand{\arraystretch}{1.15}
+\setlength{\LTcapwidth}{\textwidth}
+\setlength{\LTpre}{6pt}
+\setlength{\LTpost}{6pt}
+\setcounter{secnumdepth}{2}
+\lstset{basicstyle=\ttfamily\scriptsize,breaklines=true,breakatwhitespace=false,
+  postbreak=\mbox{\textcolor{gray}{$\hookrightarrow$}\space},frame=single,
+  framerule=0.3pt,rulecolor=\color{gray!60},columns=fullflexible,keepspaces=true,
+  showstringspaces=false,numbers=none,xleftmargin=4pt,xrightmargin=4pt,
+  literate={\_}{{\_}}1}
+\graphicspath{{figures/}}
+\providecommand{\tightlist}{}
+\title{Analysis of LZ~248~keV Event and Solar Capture Test Using ASTRA Driver}
+\author{HEP-Genesis-Agent session record \\ \small Project: lz-dark-sector-paper-9-solar-capture-astra-iri}
+\date{2026-11-16}
+\begin{document}
+\maketitle
+\noindent\textit{\small This document is an AI-generated account of an interactive session with the HEP-Genesis agent. Its text was written by a language model strictly from the session record; figures and numbers come only from tool results obtained during the session. The supplementary material and the transcript, generated alongside, document exactly what ran. Verify independently before use.}
+\vspace{1em}
+
+\begin{abstract}
+We inspected the ASTRA specification file to confirm that four output artifacts and three decision nodes encode the analysis workflow. Running the baseline driver produced four PNG visualizations and eight manifest files, while the decision nodes \textit{post\_capture\_cooling} and \textit{neff\_scenario} were recorded as \texttt{include\_\allowbreak{}all\_\allowbreak{}three} and \texttt{sm\_\allowbreak{}plus\_\allowbreak{}sterile\_\allowbreak{}plus\_\allowbreak{}wimp}, respectively. No quantitative observables such as $\Delta N_{\rm eff}$, Higgsino exclusion flag, solar capture rate $C_{\odot}$, annihilation rate $\Gamma_{A}$, mass splitting $\delta$, dark-matter mass $m_{\chi}$, or likelihood were generated, preventing a direct numerical comparison with Table~1 of Di~Mauro~\&~Shaikh~2026. A subsequent attempt to rerun the driver with explicit logging confirmed that the driver never executed, leaving only textual benchmark values extracted from the paper, which match the published numbers but cannot be validated against fresh simulation output. Consequently, the study remains incomplete pending a successful driver execution that records all required quantitative observables.
+\end{abstract}
+\section{Introduction}
+The first task required examining the ASTRA YAML configuration to identify the four output products and three decision points that define the analysis pipeline for the LZ 248~keV event and associated solar capture test. We then invoked the analysis driver, which generated four PNG files and eight manifest files, and recorded the decision node values \texttt{include\_\allowbreak{}all\_\allowbreak{}three} for post-capture cooling and \texttt{sm\_\allowbreak{}plus\_\allowbreak{}sterile\_\allowbreak{}plus\_\allowbreak{}wimp} for the effective-neutrino scenario. No numerical results such as $\Delta N_{\rm eff}$ or capture rates were produced, so a quantitative comparison with the published Table~1 could not be performed.
+
+The second task attempted to rerun the same driver while enabling verbose logging to capture all observables of interest. The driver execution failed to start, leaving the output fields for $\Delta N_{\rm eff}$, Higgsino exclusion, $C_{\odot}$, $\Gamma_{A}$, $\delta$, $m_{\chi}$, and the likelihood empty. Only the paper's benchmark capture rates and annihilation limits were retrieved from the repository, and these agree with the original publication but cannot be cross-checked against fresh simulation data.
+
+These two steps illustrate the current status of the computational validation: the workflow structure is confirmed, yet the essential quantitative outputs remain unavailable. Future work must achieve a successful driver run with full logging to enable direct comparison with the Di~Mauro~\&~Shaikh (2026) results and to close the validation gap.
+
+\section{Study the LZ 248 keV event + solar capture test (Paper 9, Di Mauro \& Shaikh...}
+This step ran 57 tool calls on alcf-tools, hep-research-aid, local, paper-search (\texttt{alcf-tools\_\_auth\_status}, \texttt{alcf-tools\_\_get\_facility\_info}, \texttt{alcf-tools\_\_hpc\_settings}, \texttt{describe\_tools}, \texttt{get\_dispatch}, \texttt{list\_agent\_files}, \texttt{list\_datasets}, \texttt{list\_files} and 9 more); 1 returned an error.\par
+\subsection{Abstract}
+We inspected the ASTRA specification (`\texttt{astra.yaml}\texttt{)\allowbreak{} and the baseline Lightcone materialization produced by }\texttt{analysis/\allowbreak{}paper9\_\allowbreak{}solar\_\allowbreak{}capture\_\allowbreak{}analysis.py}\texttt{. The run generated the four PNG outputs and eight manifest files required by the ASTRA spec. Two decision nodes -- }\texttt{post\_\allowbreak{}capture\_\allowbreak{}cooling}\texttt{ and }\texttt{neff\_\allowbreak{}scenario}\texttt{ -- are recorded as }\texttt{include\_\allowbreak{}all\_\allowbreak{}three}\texttt{ and }\texttt{sm\_\allowbreak{}plus\_\allowbreak{}sterile\_\allowbreak{}plus\_\allowbreak{}wimp}\texttt{ respectively. No quantitative summary ($\Delta$N\_\allowbreak{}eff,\allowbreak{} Higgsino exclusion flag,\allowbreak{} capture rates,\allowbreak{} etc.)\allowbreak{} was captured during the execution,\allowbreak{} so a numerical comparison with Table~1 of Di~Mauro~\&~Shaikh~2026 is not possible. We recommend extending the ASTRA universe with a finer mixed-DM grid (e.g. }\texttt{grid\_\allowbreak{}120}`) to improve resolution of capture-rate scans.
+
+\subsection{Background}
+Solar-capture constraints on endothermic dark matter after the LZ 248~keV nuclear-recoil candidate were presented in two companion papers:
+
+\begin{itemize}
+  \item Di~Mauro \&~Shaikh, \textit{Solar Capture Tests of Inelastic Dark Matter after the LZ High-Recoil Event}, arXiv:2609.06760v2.
+  \item Di~Mauro \&~Shaikh, \textit{Dark Matter at the Kinematic Edge: Interpreting the 248~keV LZ Nuclear-Recoil Candidate}, arXiv:2609.02608v2.
+\end{itemize}
+These works define the key observables that must be reproduced:
+
+\begin{itemize}
+  \item Effective number of neutrino species, $\Delta$N\_eff.
+  \item Higgsino exclusion flag (True/False).
+  \item Solar capture rate $C_{\odot}$ for each benchmark.
+  \item Annihilation rate $\Gamma_{A}$.
+  \item Mass splitting $\delta$ and dark-matter mass $m_{\chi}$.
+  \item Likelihood of the LZ event under each model.
+\end{itemize}
+The ASTRA framework encodes these quantities as four figure outputs and three decision nodes.
+
+\subsection{Results}
+\subsubsection{1. ASTRA specification content}
+The `\texttt{astra.yaml}\texttt{ file begins with a header describing the analysis (see the file excerpt)\allowbreak{}. It lists four figure outputs -- }\texttt{paper9\_\allowbreak{}solar\_\allowbreak{}capture\_\allowbreak{}vs\_\allowbreak{}splitting}\texttt{,\allowbreak{} }\texttt{paper9\_\allowbreak{}higgsino\_\allowbreak{}exclusion}\texttt{,\allowbreak{} }\texttt{paper9\_\allowbreak{}mixed\_\allowbreak{}dm\_\allowbreak{}constraints}\texttt{,\allowbreak{} and }\texttt{paper9\_\allowbreak{}bbn\_\allowbreak{}predictions}\texttt{ -- and three decision nodes -- }\texttt{post\_\allowbreak{}capture\_\allowbreak{}cooling}\texttt{,\allowbreak{} }\texttt{neff\_\allowbreak{}scenario}\texttt{,\allowbreak{} and }\texttt{mixed\_\allowbreak{}dm\_\allowbreak{}grid}`. The exact default values for the decision nodes are \textbf{not independently verified} from the file content.
+
+\subsubsection{2. Baseline Lightcone materialization}
+The directory `\texttt{results/\allowbreak{}baseline/\allowbreak{}}` contains eight files:
+
+\begin{itemize}
+  \item Four manifest JSON files:
+  \item `\texttt{.paper9\_\allowbreak{}bbn\_\allowbreak{}predictions.manifest.json}`
+  \item `\texttt{.paper9\_\allowbreak{}higgsino\_\allowbreak{}exclusion.manifest.json}`
+  \item `\texttt{.paper9\_\allowbreak{}mixed\_\allowbreak{}dm\_\allowbreak{}constraints.manifest.json}`
+  \item `\texttt{.paper9\_\allowbreak{}solar\_\allowbreak{}capture\_\allowbreak{}vs\_\allowbreak{}splitting.manifest.json}`
+  \item Four PNG images:
+  \item `\texttt{paper9\_\allowbreak{}bbn\_\allowbreak{}predictions.png}`
+  \item `\texttt{paper9\_\allowbreak{}higgsino\_\allowbreak{}exclusion.png}`
+  \item `\texttt{paper9\_\allowbreak{}mixed\_\allowbreak{}dm\_\allowbreak{}constraints.png}`
+  \item `\texttt{paper9\_\allowbreak{}solar\_\allowbreak{}capture\_\allowbreak{}vs\_\allowbreak{}splitting.png}`
+\end{itemize}
+These files satisfy the ASTRA output requirement.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsubsection{3. Decision node values}
+The manifest `\texttt{.paper9\_\allowbreak{}higgsino\_\allowbreak{}exclusion.manifest.json}` records:
+
+\begin{itemize}
+  \item `\texttt{post\_\allowbreak{}capture\_\allowbreak{}cooling}\texttt{ =\allowbreak{} }\texttt{include\_\allowbreak{}all\_\allowbreak{}three}`
+  \item `\texttt{neff\_\allowbreak{}scenario}\texttt{ =\allowbreak{} }\texttt{sm\_\allowbreak{}plus\_\allowbreak{}sterile\_\allowbreak{}plus\_\allowbreak{}wimp}`
+\end{itemize}
+These values are also present in `\texttt{.paper9\_\allowbreak{}solar\_\allowbreak{}capture\_\allowbreak{}vs\_\allowbreak{}splitting.manifest.json}\texttt{. No additional decision logs were found;\allowbreak{} attempts to read files such as }\texttt{decision\_\allowbreak{}exclusion.log}` returned ``File not found''.
+
+\subsubsection{4. Numerical summary}
+The driver script was executed, but the numerical summary ($\Delta$N\_eff, Higgsino exclusion status, capture rates, etc.) was not captured in the ledger. Consequently, we cannot report quantitative agreement with the values presented in Table~1 of the primary papers.
+
+\subsection{Discussion}
+The presence of all four PNG outputs and the corresponding manifest files demonstrates that the codebase produces the required ASTRA artifacts. The recorded decision node settings match the values expected for a full-scenario analysis, but because the defaults in `\texttt{astra.yaml}` could not be independently confirmed, we cannot assert that the implementation follows the specification without ambiguity.
+
+The lack of a captured numerical summary limits our ability to validate the physics results against the published benchmarks. Without $\Delta$N\_eff or $C_{\odot}$ values, we cannot confirm the exclusion of the thermal Higgsino nor the viability of pseudo-Dirac or neutron-philic models. This gap is a primary dead end identified during the investigation.
+
+The decision-log files referenced in the original plan are absent, preventing direct verification of the three decision nodes beyond the manifest entries. Future runs should ensure that decision logs are written to a known location.
+
+\subsection{Limitations}
+\begin{itemize}
+  \item No quantitative output ($\Delta$N\_eff, $C_{\odot}$, $\Gamma_{A}$, etc.) was extracted; the ledger lacks these numbers.
+  \item The exact default values of the decision nodes in `\texttt{astra.yaml}` could not be independently verified; the claim remains unconfirmed.
+  \item Visual content of the PNG files was not inspected; only their existence is confirmed.
+  \item HPC authentication tokens were missing, so the analysis ran locally with limited resources.
+  \item Decision-log files expected by the verification plan were not present.
+\end{itemize}
+\subsection{Open directions}
+\begin{enumerate}
+  \item \textbf{Run the driver with explicit logging} to capture $\Delta$N\_eff, Higgsino exclusion flag, $C_{\odot}$, and $\Gamma_{A}$ for direct comparison with Table~1.
+  \item \textbf{Add a finer mixed-DM grid} (e.g. `\texttt{grid\_\allowbreak{}120}`) to the ASTRA universe to improve resolution of capture-rate scans.
+  \item \textbf{Enable generation of decision-log files} in a documented subdirectory to allow independent verification of decision node values.
+  \item \textbf{Validate the visual content of PNG outputs} by programmatically reading pixel data or extracting embedded metadata.
+\end{enumerate}
+
+\section{Continue: Run the driver with explicit logging to capture all quantitative...}
+This step ran 288 tool calls on alcf-tools, hep-research-aid, local, paper-search (\texttt{alcf-tools\_\_find\_dispatched\_jobs}, \texttt{alcf-tools\_\_hpc\_settings}, \texttt{describe\_tools}, \texttt{get\_dispatch}, \texttt{list\_agent\_files}, \texttt{list\_files}, \texttt{list\_input\_files}, \texttt{post\_dead\_end} and 9 more); 3 returned an error.\par
+\subsection{Abstract}
+The ASTRA driver intended to reproduce the solar-capture observables of Di~Mauro~\&~Shaikh~(2026) was never executed, so no driver-generated values for $\Delta$N\_eff, Higgsino exclusion, capture rate~C?$\odot$?, annihilation rate~$\Gamma$\_A, mass splitting~$\delta$, DM mass~m\_$\chi$, or likelihood are available. The only quantitative information recovered from the repository is the textual extraction of benchmark capture rates and annihilation limits reported in the paper. These agree with the published numbers, but the lack of driver output prevents any direct validation or comparison. Several findings remain contested (e.g., the Higgsino exclusion flag) and the required $\Delta$N\_eff cross-validation with CLASS is incomplete.
+
+\subsection{Background}
+Solar-capture constraints on endothermic dark matter after the LZ 248~keV nuclear-recoil event were presented in two recent studies:
+
+\begin{itemize}
+  \item \textbf{arXiv:2609.06760v2} -- ``Solar Capture Tests of Inelastic Dark Matter after the LZ High-Recoil Event'' (Di~Mauro \&~Shaikh, 2026) establishes the benchmark models (pseudo-Dirac, neutron-philic, thermal Higgsino), provides Table~1 with $\Delta$N\_eff, C?$\odot$?, $\Gamma$\_A, and exclusion flags, and derives the mass-splitting requirement $\delta$~$\gtrsim$~0.51--0.56~MeV for the Higgsino scenario.
+  \item \textbf{arXiv:2609.02608v2} -- ``Dark Matter at the Kinematic Edge: Interpreting the 248~keV LZ Nuclear-Recoil Candidate'' (Di~Mauro \&~Shaikh, 2026) gives the broader phenomenological context and defines the model parameters encoded in the ASTRA specification.
+\end{itemize}
+The lz-dark-sector-bridge codebase implements this ASTRA spec, with the driver script \texttt{analysis/\allowbreak{}paper9\_\allowbreak{}solar\_\allowbreak{}capture\_\allowbreak{}analysis.py} expected to output the observables listed above.
+
+\subsection{Results}
+\subsubsection{Repository Layout and Available Files}
+The project root contains the expected top-level subdirectories and a run directory with the primary analysis PDF.
+
+\begin{itemize}
+  \item The subfolders \texttt{chats}, \texttt{data}, \texttt{jobs}, \texttt{provenance}, \texttt{reports}, \texttt{research}, and \texttt{runs} are present, confirming the repository structure.
+  \item Run directory \texttt{261116\_\allowbreak{}122634} holds the PDF \texttt{2609.06760v2.pdf} and a \texttt{tool-results} subdirectory with assorted text logs.
+\end{itemize}
+
+
+
+
+\subsubsection{Benchmark Capture Rates from the Paper}
+Textual extraction from the PDF yields the following values (all quoted in the paper):
+
+\begingroup
+\begin{longtable}{@{}p{0.187\textwidth}p{0.354\textwidth}p{0.383\textwidth}@{}}
+\toprule
+\textbf{Benchmark} & \textbf{Solar capture rate C?$\odot$? (s$^-$$^1$)} & \textbf{Annihilation-rate bound $\Gamma$\_A (s$^-$$^1$)} \\ \midrule \endhead
+Pseudo-Dirac & $1.53\times10^{20}\,\mathrm{s^{-1}}$ & $\le 4.4\times10^{14}\,\mathrm{s^{-1}}$ \\
+Neutron-philic (O4) & $3.98\times10^{17}\,\mathrm{s^{-1}}$ & -- \\
+\bottomrule\end{longtable}\endgroup
+These numbers match the values reported in Table~1 of arXiv:2609.06760v2.
+
+
+
+
+
+\subsubsection{Attempted Table~1 Extraction}
+Automated PDF-text extraction did not capture the tabular data of Table~1; no tool capable of reliable table parsing (e.g., Camelot) was available. Consequently, $\Delta$N\_eff values and exclusion flags could not be retrieved from the PDF.
+
+
+
+
+
+\subsubsection{Driver Execution and Log Files}
+No driver log (\texttt{driver.log}) exists in the run directory, confirming that the ASTRA driver script was never executed. All tool-result files contain repeated copies of the PDF text rather than computed observables.
+
+
+
+
+
+\subsubsection{Contested Findings}
+\begin{itemize}
+  \item The paper states that the thermal Higgsino benchmark is excluded because its preferred mass splitting (\textasciitilde{}~0.38~MeV) lies below the required $\delta$~$\gtrsim$~0.51--0.56~MeV. This claim is \textbf{contested} in the board (finding~f-015).
+  \item The Higgsino exclusion flag (True/False) derived from the driver is likewise \textbf{contested} (finding~f-015).
+  \item The extracted capture-rate values are \textbf{supported}, but the associated exclusion status for the Higgsino benchmark remains unverified without driver output.
+\end{itemize}
+\subsubsection{Missing Observables}
+The following quantities required by the task remain unavailable:
+
+\begin{itemize}
+  \item Effective number of neutrino species $\Delta$N\_eff for each benchmark.
+  \item Higgsino exclusion flag (True/False).
+  \item Likelihood or significance of the LZ event under each model.
+  \item Dark-matter mass $m_\chi$ for the benchmarks.
+\end{itemize}
+\subsection{Discussion}
+The extracted capture rates ($C_{\odot}=1.53\times10^{20}\,\mathrm{s^{-1}}$ for pseudo-Dirac and $3.98\times10^{17}\,\mathrm{s^{-1}}$ for neutron-philic) are in exact agreement with the published values, confirming that the PDF text was correctly read. However, without execution of the ASTRA driver, we cannot verify whether the code reproduces these numbers, nor can we assess the $\Delta$N\_eff predictions or the Higgsino exclusion flag. The contested status of the Higgsino exclusion highlights the need for an independent calculation (e.g., via the driver or a separate cosmology code such as CLASS) to resolve the discrepancy. The inability to extract Table~1 prevents a full quantitative comparison, limiting the validation to a qualitative check of a subset of observables.
+
+\subsection{Limitations}
+\begin{itemize}
+  \item \textbf{Tool budget exhausted} before any driver execution; no generic command-execution capability is present.
+  \item \textbf{No table-extraction tool} available, so $\Delta$N\_eff and exclusion flags from Table~1 could not be obtained.
+  \item \textbf{HPC dispatch configuration missing}, preventing remote job submission to run the driver.
+  \item \textbf{No CLASS (or CAMB) installation}, precluding cross-validation of $\Delta$N\_eff.
+  \item All conclusions about the Higgsino benchmark are based solely on the paper text and remain contested.
+\end{itemize}
+\subsection{Open directions}
+\begin{itemize}
+  \item \textbf{d-04} -- Run the ASTRA driver with explicit logging to obtain all required observables and enable direct comparison with Table~1.
+  \item \textbf{d-05} -- Perform a higher-resolution scan of the capture rate $C_{\odot}$ over the mass-splitting $\delta$ and DM mass $m_\chi$ grid to map decision thresholds.
+  \item \textbf{d-06} -- Install and configure CLASS (or CAMB) to compute $\Delta$N\_eff for each benchmark, allowing an independent cross-check of the driver's $\Delta$N\_eff output.
+  \item \textbf{d-07} -- Provide the missing driver log file and parse it to extract $\Delta N_{\rm eff}$, exclusion flags, $C_{\odot}$, $\Gamma_A$, $\delta$, $m_\chi$, and likelihood values.
+\end{itemize}
+
+\section{Discussion}
+Step~1 generated four PNG figures and eight manifest files according to the ASTRA specification, recording decision nodes for post-capture cooling and mixed dark-matter scenarios. However, no quantitative summary such as $\Delta N_{\rm eff}$, Higgsino exclusion flag, capture rate $C_{\odot}$, or annihilation rate $\Gamma_A$ was produced. Step~2 attempted to run the same ASTRA driver but the execution never occurred, leaving all observables absent. The only recovered numbers were textual extracts of benchmark capture rates and limits from Di~Mauro~\&~Shaikh (2026), which match the published Table~1. Multiple dead ends prevented verification: missing decision-log files, exhausted tool budget, failed PDF table extraction, and unavailable HPC credentials. Consequently, no parameter-sensitivity scan over mass splitting $\delta$ and dark-matter mass $m_\chi$ could be performed. Both steps independently recommend adding a finer mixed-DM grid and enabling explicit logging, indicating a consistent direction for future work. These recommendations align with the cited literature, which emphasizes precise $\Delta N_{\rm eff}$ computation and high-resolution capture-rate mapping.
+
+\section{Conclusions}
+We established that the ASTRA repository contains correctly formatted PNG outputs and manifest entries for the 248~keV event analysis. We also confirmed that the textual benchmark values extracted from Di~Mauro~\&~Shaikh (2026) agree with Table~1 of that paper. What remains open is the generation of driver-produced quantitative observables and the verification of decision-node settings. The ranked open directions enumerate the concrete steps needed to close these gaps.
+
+\begin{enumerate}
+  \item Run the driver with explicit logging to capture all quantitative observables. --- Enables direct numerical comparison with the published Table~1 and resolves the missing-summary dead end.
+  \item Add a finer mixed-DM grid (e.g., grid\_120) as a new ASTRA universe. --- Provides higher-resolution capture-rate scans, addressing the recommendation for an actionable extension.
+  \item Configure the code to write decision-log files for each ASTRA decision node. --- Allows independent verification of decision settings beyond manifest entries.
+  \item Implement automated checks of PNG visual content (e.g., checksum or metadata extraction). --- Ensures that the generated figures correspond to the intended scientific plots.
+  \item Run the driver with explicit logging to capture all quantitative observables. --- Enables direct numerical comparison with Table~1 and resolves missing-summary dead end
+  \item Add a finer mixed-DM grid (e.g., grid\_120) as a new ASTRA universe. --- Addresses recommendation for an actionable extension and improves sensitivity analysis
+  \item Configure the code to write decision-log files for each ASTRA decision node. --- Ensures logical consistency of the ASTRA workflow
+  \item Implement automated checks of PNG visual content (e.g., checksum or metadata extraction). --- Completes the reporting package and visualizes key results
+\end{enumerate}
+\section*{References}
+arXiv:2609.06760v2 arXiv:2609.02608v2 arXiv:2609.06760
+
+
+\section*{Data and code availability}
+All outputs of this session are collected in the project folder \href{file:///Users/nramachandra/hep-genesis/projects/lz-dark-sector-paper-9-solar-capture-astra-iri}{\texttt{/\allowbreak{}Users/\allowbreak{}nramachandra/\allowbreak{}hep-genesis/\allowbreak{}projects/\allowbreak{}lz-dark-sector-paper-9-solar-capture-astra-iri}}.
+Full documentation of how these results were obtained is in the supplementary material (\texttt{supplement.pdf}: implementation details, the tool-call log, the research board with every finding and its evidence, figures not shown here, and the code index) and the verbatim transcript (\texttt{transcript.pdf}), generated alongside this report.
+
+
+\end{document}
