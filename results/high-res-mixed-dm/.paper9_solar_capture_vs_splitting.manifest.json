@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "output_id": "paper9_solar_capture_vs_splitting",
+  "universe_id": "high-res-mixed-dm",
+  "recipe": "python3 analysis/paper9_solar_capture_analysis.py --out results/high-res-mixed-dm/paper9_solar_capture_vs_splitting.png",
+  "definition_version": "sha256:a5150cfbbe7439a21f305ecf90fb59eaad710d973b359a58fe9e66c00a76615a",
+  "env_version": "sha256:97a1b91a5005b0cd643c0471b540bea40eb4bd79a36640104997517966a76bd4",
+  "data_version": "sha256:f6e21924615d3ab3fac94c8e7f8d406475b9afe161ac1f5173e20529d814bf45",
+  "decisions": {
+    "post_capture_cooling": "include_all_three",
+    "neff_scenario": "sm_plus_sterile_plus_wimp"
+  },
+  "input_versions": {
+    "paper9_pdf": "sha256:212e668236f85d65707f2fd4b8a9f22be8d7a6aafaec1c4eed8c6b402c5c2d88",
+    "physics_engine": "sha256:df4ec8073544be4943f43a42486818725506d2d86222bfd000c55f37cb43a701",
+    "paper9_script": "sha256:99048abbe25f5cfa6950b21774ab99a62c334bf683f340e7f35236a2e4f69c4e"
+  },
+  "git_sha": "3a7f5422b96cdb2219269604be594955129b099e",
+  "git_remote": "git@github.com:nesar-ai-assistant/lz-dark-sector-bridge.git",
+  "lc_version": "0.5.0",
+  "hermeticity": {
+    "mechanism": "seatbelt",
+    "fs": "declared",
+    "network": "allowed",
+    "landlock_abi": null,
+    "exec_allowlist_version": 1
+  },
+  "started_at": "2026-11-16T18:39:39.913+00:00",
+  "finished_at": "2026-11-16T18:39:49.515+00:00",
+  "uv_version": "0.12.5",
+  "image": null
+}
