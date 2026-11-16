@@ -1,0 +1,6 @@
+id: high-res-mixed-dm
+description: "High-resolution variant of baseline with 120×120 mixed-DM χ² grid (4× finer than baseline) for sharper budget-triangle and PQ-band boundaries"
+decisions:
+  post_capture_cooling: include_all_three
+  neff_scenario: sm_plus_sterile_plus_wimp
+  mixed_dm_grid: grid_120

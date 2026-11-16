@@ -75,7 +75,7 @@ outputs:
     decisions: [post_capture_cooling, neff_scenario, mixed_dm_grid]
     recipe:
       command: >-
-        python3 analysis/paper9_solar_capture_analysis.py --out {output}
+        ASTRA_MIXED_DM_GRID={decisions.mixed_dm_grid} python3 analysis/paper9_solar_capture_analysis.py --out {output}
 
   - id: paper9_bbn_predictions
     type: figure

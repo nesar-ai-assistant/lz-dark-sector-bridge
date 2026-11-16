@@ -157,7 +157,10 @@ print("  -> higgsino_exclusion_delta.png")
 
 # ===================== PLOT 3 =====================
 print("Plot 3: Mixed DM constraints...")
-n_grid = 60
+# ASTRA decision mixed_dm_grid: grid_60 (default) vs grid_120
+import os as _os_grid
+_grid_opt = _os_grid.environ.get("ASTRA_MIXED_DM_GRID", "grid_60")
+n_grid = 120 if _grid_opt == "grid_120" else 60
 f_wimp_arr = np.linspace(0.01, 1.0, n_grid)
 f_sterile_arr = np.linspace(0.01, 1.0, n_grid)
 FW, FS = np.meshgrid(f_wimp_arr, f_sterile_arr)
