@@ -13,9 +13,9 @@
   "input_versions": {
     "paper9_pdf": "sha256:212e668236f85d65707f2fd4b8a9f22be8d7a6aafaec1c4eed8c6b402c5c2d88",
     "physics_engine": "sha256:df4ec8073544be4943f43a42486818725506d2d86222bfd000c55f37cb43a701",
-    "paper9_script": "sha256:9bfaf1050c90eee380157ae42f36e5e99310be325f85767b3cc6d6071dc8d38f"
+    "paper9_script": "sha256:99048abbe25f5cfa6950b21774ab99a62c334bf683f340e7f35236a2e4f69c4e"
   },
-  "git_sha": "e4de051ab31fbc67451d22c65e1a99e86da2eba6",
+  "git_sha": "3a7f5422b96cdb2219269604be594955129b099e",
   "git_remote": "git@github.com:nesar-ai-assistant/lz-dark-sector-bridge.git",
   "lc_version": "0.5.0",
   "hermeticity": {
@@ -25,8 +25,8 @@
     "landlock_abi": null,
     "exec_allowlist_version": 1
   },
-  "started_at": "2026-11-13T21:10:09.074+00:00",
-  "finished_at": "2026-11-13T21:10:17.801+00:00",
+  "started_at": "2026-11-16T18:39:29.641+00:00",
+  "finished_at": "2026-11-16T18:39:39.691+00:00",
   "uv_version": "0.12.5",
   "image": null
 }
