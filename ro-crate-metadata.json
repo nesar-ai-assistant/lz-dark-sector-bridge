@@ -24,7 +24,7 @@
      "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
     }
    ],
-   "datePublished": "2026-11-13",
+   "datePublished": "2026-11-16T18:39:49.515+00:00",
    "description": "Reproduction of the solar-capture test of inelastic dark matter after the 248 keV LZ nuclear-recoil candidate (Di Mauro & Shaikh 2026, arXiv:2609.06760; paper 09_Solar_Capture_Inelastic_DM_LZ.pdf in papers/). Uses the project's physics engine (tools/physics.py) to (a) model the endothermic solar-capture rate vs. mass splitting δ, (b) evaluate IceCube annihilation-rate limits in three post-capture cooling scenarios, (c) show the mixed-DM (WIMP + sterile-ν) χ² constraint plane after Higgsino exclusion, and (d) overlay BBN Y_p/D/H predictions vs. N_eff for three scenarios. Scripts live in analysis/; figures are committed to analysis/output/ (the repo's .gitignore excludes *.png elsewhere but explicitly re-includes analysis/output/*.png).",
    "hasPart": [
     {
@@ -43,7 +43,67 @@
      "@id": "universes/baseline.yaml"
     },
     {
+     "@id": "universes/high-res-mixed-dm.yaml"
+    },
+    {
      "@id": "README.md"
+    },
+    {
+     "@id": "results/baseline/paper9_bbn_predictions.png"
+    },
+    {
+     "@id": "results/baseline/.paper9_bbn_predictions.manifest.json"
+    },
+    {
+     "@id": "results/baseline/paper9_higgsino_exclusion.png"
+    },
+    {
+     "@id": "results/baseline/.paper9_higgsino_exclusion.manifest.json"
+    },
+    {
+     "@id": "results/baseline/paper9_mixed_dm_constraints.png"
+    },
+    {
+     "@id": "results/baseline/.paper9_mixed_dm_constraints.manifest.json"
+    },
+    {
+     "@id": "results/baseline/paper9_solar_capture_vs_splitting.png"
+    },
+    {
+     "@id": "results/baseline/.paper9_solar_capture_vs_splitting.manifest.json"
+    },
+    {
+     "@id": "results/high-res-mixed-dm/paper9_bbn_predictions.png"
+    },
+    {
+     "@id": "results/high-res-mixed-dm/.paper9_bbn_predictions.manifest.json"
+    },
+    {
+     "@id": "results/high-res-mixed-dm/paper9_higgsino_exclusion.png"
+    },
+    {
+     "@id": "results/high-res-mixed-dm/.paper9_higgsino_exclusion.manifest.json"
+    },
+    {
+     "@id": "results/high-res-mixed-dm/paper9_mixed_dm_constraints.png"
+    },
+    {
+     "@id": "results/high-res-mixed-dm/.paper9_mixed_dm_constraints.manifest.json"
+    },
+    {
+     "@id": "results/high-res-mixed-dm/paper9_solar_capture_vs_splitting.png"
+    },
+    {
+     "@id": "results/high-res-mixed-dm/.paper9_solar_capture_vs_splitting.manifest.json"
+    },
+    {
+     "@id": "papers/09_Solar_Capture_Inelastic_DM_LZ.pdf"
+    },
+    {
+     "@id": "analysis/paper9_solar_capture_analysis.py"
+    },
+    {
+     "@id": "tools/physics.py"
     }
    ],
    "license": {
@@ -52,6 +112,35 @@
    "mainEntity": {
     "@id": "astra.yaml"
    },
+   "mentions": [
+    {
+     "@id": "urn:uuid:9db84457-9977-5b5f-8df9-129c29626491"
+    },
+    {
+     "@id": "urn:uuid:d4b317dd-c2ef-58a6-b30b-acdf5c48d366"
+    },
+    {
+     "@id": "urn:uuid:0bfa1fdd-5d54-5faf-9a74-f3dcf9ba493e"
+    },
+    {
+     "@id": "urn:uuid:10a19157-263f-5dd6-bcf5-5018e8f34d31"
+    },
+    {
+     "@id": "urn:uuid:8721774c-a8eb-54c1-941f-ed43d82e4c11"
+    },
+    {
+     "@id": "urn:uuid:3889e688-8944-5741-b793-f87f011faa2b"
+    },
+    {
+     "@id": "urn:uuid:2c004102-b442-5752-8f9b-d773ec59561c"
+    },
+    {
+     "@id": "urn:uuid:3ceb9e69-412d-5399-8167-2fc778062ca6"
+    },
+    {
+     "@id": "urn:uuid:19ccba41-37bd-5048-8ac4-5bfc9a5b5b53"
+    }
+   ],
    "name": "LZ Dark Sector Bridge — Paper 9 Solar Capture"
   },
   {
@@ -90,21 +179,21 @@
    "creator": {
     "@id": "mailto:nesar1202@gmail.com"
    },
-   "dateCreated": "2026-11-13",
+   "dateCreated": "2026-11-16",
    "description": "Reproduction of the solar-capture test of inelastic dark matter after the 248 keV LZ nuclear-recoil candidate (Di Mauro & Shaikh 2026, arXiv:2609.06760; paper 09_Solar_Capture_Inelastic_DM_LZ.pdf in papers/). Uses the project's physics engine (tools/physics.py) to (a) model the endothermic solar-capture rate vs. mass splitting δ, (b) evaluate IceCube annihilation-rate limits in three post-capture cooling scenarios, (c) show the mixed-DM (WIMP + sterile-ν) χ² constraint plane after Higgsino exclusion, and (d) overlay BBN Y_p/D/H predictions vs. N_eff for three scenarios. Scripts live in analysis/; figures are committed to analysis/output/ (the repo's .gitignore excludes *.png elsewhere but explicitly re-includes analysis/output/*.png).",
    "encodingFormat": "application/yaml",
    "hasPart": [
     {
-     "@id": "urn:uuid:2f7c09db-fab3-5795-8641-827cb0732a02"
+     "@id": "git@github.com:nesar-ai-assistant/lz-dark-sector-bridge.git#tool/paper9_bbn_predictions"
     },
     {
-     "@id": "urn:uuid:8e219ce3-fb64-5e7e-9706-50085ea4f945"
+     "@id": "git@github.com:nesar-ai-assistant/lz-dark-sector-bridge.git#tool/paper9_higgsino_exclusion"
     },
     {
-     "@id": "urn:uuid:3c42b976-3c14-525e-9d78-a4eddb3508b5"
+     "@id": "git@github.com:nesar-ai-assistant/lz-dark-sector-bridge.git#tool/paper9_mixed_dm_constraints"
     },
     {
-     "@id": "urn:uuid:ab12a5ec-f8d8-556b-8d45-25a0e6767dc4"
+     "@id": "git@github.com:nesar-ai-assistant/lz-dark-sector-bridge.git#tool/paper9_solar_capture_vs_splitting"
     }
    ],
    "input": [
@@ -139,7 +228,8 @@
      "@id": "#step-paper9_solar_capture_vs_splitting"
     }
    ],
-   "version": "8547205"
+   "url": "git@github.com:nesar-ai-assistant/lz-dark-sector-bridge.git",
+   "version": "3a7f542"
   },
   {
    "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.1",
@@ -180,63 +270,67 @@
    "name": "post_capture_cooling"
   },
   {
-   "@id": "urn:uuid:2f7c09db-fab3-5795-8641-827cb0732a02",
+   "@id": "git@github.com:nesar-ai-assistant/lz-dark-sector-bridge.git#tool/paper9_bbn_predictions",
    "@type": "SoftwareApplication",
    "description": "the recipe of output `paper9_bbn_predictions`",
    "name": "paper9_bbn_predictions",
-   "softwareVersion": "8547205"
+   "softwareVersion": "3a7f542",
+   "url": "git@github.com:nesar-ai-assistant/lz-dark-sector-bridge.git"
   },
   {
    "@id": "#step-paper9_bbn_predictions",
    "@type": "HowToStep",
    "position": 0,
    "workExample": {
-    "@id": "urn:uuid:2f7c09db-fab3-5795-8641-827cb0732a02"
+    "@id": "git@github.com:nesar-ai-assistant/lz-dark-sector-bridge.git#tool/paper9_bbn_predictions"
    }
   },
   {
-   "@id": "urn:uuid:8e219ce3-fb64-5e7e-9706-50085ea4f945",
+   "@id": "git@github.com:nesar-ai-assistant/lz-dark-sector-bridge.git#tool/paper9_higgsino_exclusion",
    "@type": "SoftwareApplication",
    "description": "the recipe of output `paper9_higgsino_exclusion`",
    "name": "paper9_higgsino_exclusion",
-   "softwareVersion": "8547205"
+   "softwareVersion": "3a7f542",
+   "url": "git@github.com:nesar-ai-assistant/lz-dark-sector-bridge.git"
   },
   {
    "@id": "#step-paper9_higgsino_exclusion",
    "@type": "HowToStep",
    "position": 1,
    "workExample": {
-    "@id": "urn:uuid:8e219ce3-fb64-5e7e-9706-50085ea4f945"
+    "@id": "git@github.com:nesar-ai-assistant/lz-dark-sector-bridge.git#tool/paper9_higgsino_exclusion"
    }
   },
   {
-   "@id": "urn:uuid:3c42b976-3c14-525e-9d78-a4eddb3508b5",
+   "@id": "git@github.com:nesar-ai-assistant/lz-dark-sector-bridge.git#tool/paper9_mixed_dm_constraints",
    "@type": "SoftwareApplication",
    "description": "the recipe of output `paper9_mixed_dm_constraints`",
    "name": "paper9_mixed_dm_constraints",
-   "softwareVersion": "8547205"
+   "softwareVersion": "3a7f542",
+   "url": "git@github.com:nesar-ai-assistant/lz-dark-sector-bridge.git"
   },
   {
    "@id": "#step-paper9_mixed_dm_constraints",
    "@type": "HowToStep",
    "position": 2,
    "workExample": {
-    "@id": "urn:uuid:3c42b976-3c14-525e-9d78-a4eddb3508b5"
+    "@id": "git@github.com:nesar-ai-assistant/lz-dark-sector-bridge.git#tool/paper9_mixed_dm_constraints"
    }
   },
   {
-   "@id": "urn:uuid:ab12a5ec-f8d8-556b-8d45-25a0e6767dc4",
+   "@id": "git@github.com:nesar-ai-assistant/lz-dark-sector-bridge.git#tool/paper9_solar_capture_vs_splitting",
    "@type": "SoftwareApplication",
    "description": "the recipe of output `paper9_solar_capture_vs_splitting`",
    "name": "paper9_solar_capture_vs_splitting",
-   "softwareVersion": "8547205"
+   "softwareVersion": "3a7f542",
+   "url": "git@github.com:nesar-ai-assistant/lz-dark-sector-bridge.git"
   },
   {
    "@id": "#step-paper9_solar_capture_vs_splitting",
    "@type": "HowToStep",
    "position": 3,
    "workExample": {
-    "@id": "urn:uuid:ab12a5ec-f8d8-556b-8d45-25a0e6767dc4"
+    "@id": "git@github.com:nesar-ai-assistant/lz-dark-sector-bridge.git#tool/paper9_solar_capture_vs_splitting"
    }
   },
   {
@@ -268,6 +362,13 @@
    "sha256": "43f03c4dfab46cc5c7c57c777981aa51330fd8d330ddfef2f72de52a9d359507"
   },
   {
+   "@id": "universes/high-res-mixed-dm.yaml",
+   "@type": "File",
+   "contentSize": "305",
+   "encodingFormat": "application/yaml",
+   "sha256": "bf8ae4bf30f0d7a49a0e6c4c11c7a830de5fd2b2db6bf7a6f60124f0e03d7c57"
+  },
+  {
    "@id": "README.md",
    "@type": "File",
    "about": {
@@ -276,6 +377,905 @@
    "contentSize": "10224",
    "encodingFormat": "text/markdown",
    "sha256": "5ec25cc50fc942da61dd6e182b969440304c90813aca22868b5c78481087a12f"
+  },
+  {
+   "@id": "results/baseline/paper9_bbn_predictions.png",
+   "@type": "File",
+   "contentSize": "236841",
+   "description": "output `paper9_bbn_predictions` materialized under `baseline`",
+   "encodingFormat": "image/png",
+   "name": "paper9_bbn_predictions (universe baseline)",
+   "sha256": "c5e162b3347ad455e8dd9b3ba701d5e21bb91c144de27aafc9ce0906d33fcd0d",
+   "subjectOf": {
+    "@id": "results/baseline/.paper9_bbn_predictions.manifest.json"
+   },
+   "version": "sha256:c5e162b3347ad455e8dd9b3ba701d5e21bb91c144de27aafc9ce0906d33fcd0d"
+  },
+  {
+   "@id": "results/baseline/.paper9_bbn_predictions.manifest.json",
+   "@type": "File",
+   "about": {
+    "@id": "results/baseline/paper9_bbn_predictions.png"
+   },
+   "contentSize": "1389",
+   "encodingFormat": "application/json",
+   "sha256": "28c141432cd7c78c2b6cd0e1a7f26a3da3c2989d4d0795d093353d7c5b9c02eb"
+  },
+  {
+   "@id": "results/baseline/paper9_higgsino_exclusion.png",
+   "@type": "File",
+   "contentSize": "315172",
+   "description": "output `paper9_higgsino_exclusion` materialized under `baseline`",
+   "encodingFormat": "image/png",
+   "name": "paper9_higgsino_exclusion (universe baseline)",
+   "sha256": "7292f28c170a9b214a227a0f299becc0694589025ccca23313d5a54be2d52ff0",
+   "subjectOf": {
+    "@id": "results/baseline/.paper9_higgsino_exclusion.manifest.json"
+   },
+   "version": "sha256:7292f28c170a9b214a227a0f299becc0694589025ccca23313d5a54be2d52ff0"
+  },
+  {
+   "@id": "results/baseline/.paper9_higgsino_exclusion.manifest.json",
+   "@type": "File",
+   "about": {
+    "@id": "results/baseline/paper9_higgsino_exclusion.png"
+   },
+   "contentSize": "1395",
+   "encodingFormat": "application/json",
+   "sha256": "534795d15ce1502d6a11a5bc2c26284df927386a21c788ba812fb5fd23131df8"
+  },
+  {
+   "@id": "results/baseline/paper9_mixed_dm_constraints.png",
+   "@type": "File",
+   "contentSize": "246487",
+   "description": "output `paper9_mixed_dm_constraints` materialized under `baseline`",
+   "encodingFormat": "image/png",
+   "name": "paper9_mixed_dm_constraints (universe baseline)",
+   "sha256": "f01c742cc842a59ae7544f8e73d69a6c945595d9de1db2cbb95ae44c82f8c4d4",
+   "subjectOf": {
+    "@id": "results/baseline/.paper9_mixed_dm_constraints.manifest.json"
+   },
+   "version": "sha256:f01c742cc842a59ae7544f8e73d69a6c945595d9de1db2cbb95ae44c82f8c4d4"
+  },
+  {
+   "@id": "results/baseline/.paper9_mixed_dm_constraints.manifest.json",
+   "@type": "File",
+   "about": {
+    "@id": "results/baseline/paper9_mixed_dm_constraints.png"
+   },
+   "contentSize": "1459",
+   "encodingFormat": "application/json",
+   "sha256": "97a6c01bfa1bac6db2b4dbc0a291159ac7dbdbd32df3ac788dc2b807c187131e"
+  },
+  {
+   "@id": "results/baseline/paper9_solar_capture_vs_splitting.png",
+   "@type": "File",
+   "contentSize": "310072",
+   "description": "output `paper9_solar_capture_vs_splitting` materialized under `baseline`",
+   "encodingFormat": "image/png",
+   "name": "paper9_solar_capture_vs_splitting (universe baseline)",
+   "sha256": "f6e21924615d3ab3fac94c8e7f8d406475b9afe161ac1f5173e20529d814bf45",
+   "subjectOf": {
+    "@id": "results/baseline/.paper9_solar_capture_vs_splitting.manifest.json"
+   },
+   "version": "sha256:f6e21924615d3ab3fac94c8e7f8d406475b9afe161ac1f5173e20529d814bf45"
+  },
+  {
+   "@id": "results/baseline/.paper9_solar_capture_vs_splitting.manifest.json",
+   "@type": "File",
+   "about": {
+    "@id": "results/baseline/paper9_solar_capture_vs_splitting.png"
+   },
+   "contentSize": "1411",
+   "encodingFormat": "application/json",
+   "sha256": "d0f5f0c4669176b0ab025709fd082dfebfedc044cc0086bd92ededd8185336c3"
+  },
+  {
+   "@id": "results/high-res-mixed-dm/paper9_bbn_predictions.png",
+   "@type": "File",
+   "contentSize": "236841",
+   "description": "output `paper9_bbn_predictions` materialized under `high-res-mixed-dm`",
+   "encodingFormat": "image/png",
+   "name": "paper9_bbn_predictions (universe high-res-mixed-dm)",
+   "sha256": "c5e162b3347ad455e8dd9b3ba701d5e21bb91c144de27aafc9ce0906d33fcd0d",
+   "subjectOf": {
+    "@id": "results/high-res-mixed-dm/.paper9_bbn_predictions.manifest.json"
+   },
+   "version": "sha256:c5e162b3347ad455e8dd9b3ba701d5e21bb91c144de27aafc9ce0906d33fcd0d"
+  },
+  {
+   "@id": "results/high-res-mixed-dm/.paper9_bbn_predictions.manifest.json",
+   "@type": "File",
+   "about": {
+    "@id": "results/high-res-mixed-dm/paper9_bbn_predictions.png"
+   },
+   "contentSize": "1407",
+   "encodingFormat": "application/json",
+   "sha256": "bd8bca7f5ea04ce939b8b579bdba589aee8ff9a26bac2465c26556a6a8912e23"
+  },
+  {
+   "@id": "results/high-res-mixed-dm/paper9_higgsino_exclusion.png",
+   "@type": "File",
+   "contentSize": "315172",
+   "description": "output `paper9_higgsino_exclusion` materialized under `high-res-mixed-dm`",
+   "encodingFormat": "image/png",
+   "name": "paper9_higgsino_exclusion (universe high-res-mixed-dm)",
+   "sha256": "7292f28c170a9b214a227a0f299becc0694589025ccca23313d5a54be2d52ff0",
+   "subjectOf": {
+    "@id": "results/high-res-mixed-dm/.paper9_higgsino_exclusion.manifest.json"
+   },
+   "version": "sha256:7292f28c170a9b214a227a0f299becc0694589025ccca23313d5a54be2d52ff0"
+  },
+  {
+   "@id": "results/high-res-mixed-dm/.paper9_higgsino_exclusion.manifest.json",
+   "@type": "File",
+   "about": {
+    "@id": "results/high-res-mixed-dm/paper9_higgsino_exclusion.png"
+   },
+   "contentSize": "1413",
+   "encodingFormat": "application/json",
+   "sha256": "924529833a8fbfdbbb4e19caf80d41158de3d97f711d767bd57fa69a78191cf8"
+  },
+  {
+   "@id": "results/high-res-mixed-dm/paper9_mixed_dm_constraints.png",
+   "@type": "File",
+   "contentSize": "246605",
+   "description": "output `paper9_mixed_dm_constraints` materialized under `high-res-mixed-dm`",
+   "encodingFormat": "image/png",
+   "name": "paper9_mixed_dm_constraints (universe high-res-mixed-dm)",
+   "sha256": "67604cdaf7e091290dbb86d60ed457f657a0c3b691d37ed34cfe666166468739",
+   "subjectOf": {
+    "@id": "results/high-res-mixed-dm/.paper9_mixed_dm_constraints.manifest.json"
+   },
+   "version": "sha256:67604cdaf7e091290dbb86d60ed457f657a0c3b691d37ed34cfe666166468739"
+  },
+  {
+   "@id": "results/high-res-mixed-dm/.paper9_mixed_dm_constraints.manifest.json",
+   "@type": "File",
+   "about": {
+    "@id": "results/high-res-mixed-dm/paper9_mixed_dm_constraints.png"
+   },
+   "contentSize": "1479",
+   "encodingFormat": "application/json",
+   "sha256": "09e7ba3b2eedade535e644ebff852f83ab6aeb285d06d0762a8c7c2b34ba63fb"
+  },
+  {
+   "@id": "results/high-res-mixed-dm/paper9_solar_capture_vs_splitting.png",
+   "@type": "File",
+   "contentSize": "310072",
+   "description": "output `paper9_solar_capture_vs_splitting` materialized under `high-res-mixed-dm`",
+   "encodingFormat": "image/png",
+   "name": "paper9_solar_capture_vs_splitting (universe high-res-mixed-dm)",
+   "sha256": "f6e21924615d3ab3fac94c8e7f8d406475b9afe161ac1f5173e20529d814bf45",
+   "subjectOf": {
+    "@id": "results/high-res-mixed-dm/.paper9_solar_capture_vs_splitting.manifest.json"
+   },
+   "version": "sha256:f6e21924615d3ab3fac94c8e7f8d406475b9afe161ac1f5173e20529d814bf45"
+  },
+  {
+   "@id": "results/high-res-mixed-dm/.paper9_solar_capture_vs_splitting.manifest.json",
+   "@type": "File",
+   "about": {
+    "@id": "results/high-res-mixed-dm/paper9_solar_capture_vs_splitting.png"
+   },
+   "contentSize": "1429",
+   "encodingFormat": "application/json",
+   "sha256": "f211884e89f00e7ee0ab63c6c1c5826351c280e48742d81b8984b215b83b8cc2"
+  },
+  {
+   "@id": "papers/09_Solar_Capture_Inelastic_DM_LZ.pdf",
+   "@type": "File",
+   "contentSize": "885392",
+   "encodingFormat": "application/pdf",
+   "name": "papers/09_Solar_Capture_Inelastic_DM_LZ.pdf",
+   "sha256": "212e668236f85d65707f2fd4b8a9f22be8d7a6aafaec1c4eed8c6b402c5c2d88"
+  },
+  {
+   "@id": "analysis/paper9_solar_capture_analysis.py",
+   "@type": "File",
+   "contentSize": "12331",
+   "name": "analysis/paper9_solar_capture_analysis.py",
+   "sha256": "99048abbe25f5cfa6950b21774ab99a62c334bf683f340e7f35236a2e4f69c4e"
+  },
+  {
+   "@id": "tools/physics.py",
+   "@type": "File",
+   "contentSize": "24231",
+   "name": "tools/physics.py",
+   "sha256": "df4ec8073544be4943f43a42486818725506d2d86222bfd000c55f37cb43a701"
+  },
+  {
+   "@id": "#value-baseline-paper9_bbn_predictions-neff_scenario",
+   "@type": "PropertyValue",
+   "exampleOfWork": {
+    "@id": "#param-neff_scenario"
+   },
+   "name": "neff_scenario",
+   "value": "sm_plus_sterile_plus_wimp"
+  },
+  {
+   "@id": "#value-baseline-paper9_bbn_predictions-post_capture_cooling",
+   "@type": "PropertyValue",
+   "exampleOfWork": {
+    "@id": "#param-post_capture_cooling"
+   },
+   "name": "post_capture_cooling",
+   "value": "include_all_three"
+  },
+  {
+   "@id": "urn:uuid:9db84457-9977-5b5f-8df9-129c29626491",
+   "@type": "CreateAction",
+   "actionStatus": "http://schema.org/CompletedActionStatus",
+   "agent": {
+    "@id": "mailto:nesar1202@gmail.com"
+   },
+   "description": "python3 analysis/paper9_solar_capture_analysis.py --out results/baseline/paper9_bbn_predictions.png",
+   "endTime": "2026-11-16T18:39:39.618+00:00",
+   "instrument": {
+    "@id": "git@github.com:nesar-ai-assistant/lz-dark-sector-bridge.git#tool/paper9_bbn_predictions"
+   },
+   "name": "run of `paper9_bbn_predictions` in universe `baseline`",
+   "object": [
+    {
+     "@id": "pyproject.toml"
+    },
+    {
+     "@id": "uv.lock"
+    },
+    {
+     "@id": ".python-version"
+    },
+    {
+     "@id": "papers/09_Solar_Capture_Inelastic_DM_LZ.pdf"
+    },
+    {
+     "@id": "analysis/paper9_solar_capture_analysis.py"
+    },
+    {
+     "@id": "tools/physics.py"
+    },
+    {
+     "@id": "#value-baseline-paper9_bbn_predictions-neff_scenario"
+    },
+    {
+     "@id": "#value-baseline-paper9_bbn_predictions-post_capture_cooling"
+    }
+   ],
+   "result": {
+    "@id": "results/baseline/paper9_bbn_predictions.png"
+   },
+   "startTime": "2026-11-16T18:39:29.644+00:00"
+  },
+  {
+   "@id": "#control-baseline-paper9_bbn_predictions",
+   "@type": "ControlAction",
+   "instrument": {
+    "@id": "#step-paper9_bbn_predictions"
+   },
+   "name": "orchestration of `paper9_bbn_predictions` in universe `baseline`",
+   "object": {
+    "@id": "urn:uuid:9db84457-9977-5b5f-8df9-129c29626491"
+   }
+  },
+  {
+   "@id": "#value-baseline-paper9_higgsino_exclusion-neff_scenario",
+   "@type": "PropertyValue",
+   "exampleOfWork": {
+    "@id": "#param-neff_scenario"
+   },
+   "name": "neff_scenario",
+   "value": "sm_plus_sterile_plus_wimp"
+  },
+  {
+   "@id": "#value-baseline-paper9_higgsino_exclusion-post_capture_cooling",
+   "@type": "PropertyValue",
+   "exampleOfWork": {
+    "@id": "#param-post_capture_cooling"
+   },
+   "name": "post_capture_cooling",
+   "value": "include_all_three"
+  },
+  {
+   "@id": "urn:uuid:d4b317dd-c2ef-58a6-b30b-acdf5c48d366",
+   "@type": "CreateAction",
+   "actionStatus": "http://schema.org/CompletedActionStatus",
+   "agent": {
+    "@id": "mailto:nesar1202@gmail.com"
+   },
+   "description": "python3 analysis/paper9_solar_capture_analysis.py --out results/baseline/paper9_higgsino_exclusion.png",
+   "endTime": "2026-11-16T18:39:39.771+00:00",
+   "instrument": {
+    "@id": "git@github.com:nesar-ai-assistant/lz-dark-sector-bridge.git#tool/paper9_higgsino_exclusion"
+   },
+   "name": "run of `paper9_higgsino_exclusion` in universe `baseline`",
+   "object": [
+    {
+     "@id": "pyproject.toml"
+    },
+    {
+     "@id": "uv.lock"
+    },
+    {
+     "@id": ".python-version"
+    },
+    {
+     "@id": "papers/09_Solar_Capture_Inelastic_DM_LZ.pdf"
+    },
+    {
+     "@id": "analysis/paper9_solar_capture_analysis.py"
+    },
+    {
+     "@id": "tools/physics.py"
+    },
+    {
+     "@id": "#value-baseline-paper9_higgsino_exclusion-neff_scenario"
+    },
+    {
+     "@id": "#value-baseline-paper9_higgsino_exclusion-post_capture_cooling"
+    }
+   ],
+   "result": {
+    "@id": "results/baseline/paper9_higgsino_exclusion.png"
+   },
+   "startTime": "2026-11-16T18:39:29.657+00:00"
+  },
+  {
+   "@id": "#control-baseline-paper9_higgsino_exclusion",
+   "@type": "ControlAction",
+   "instrument": {
+    "@id": "#step-paper9_higgsino_exclusion"
+   },
+   "name": "orchestration of `paper9_higgsino_exclusion` in universe `baseline`",
+   "object": {
+    "@id": "urn:uuid:d4b317dd-c2ef-58a6-b30b-acdf5c48d366"
+   }
+  },
+  {
+   "@id": "#value-baseline-paper9_mixed_dm_constraints-mixed_dm_grid",
+   "@type": "PropertyValue",
+   "exampleOfWork": {
+    "@id": "#param-mixed_dm_grid"
+   },
+   "name": "mixed_dm_grid",
+   "value": "grid_60"
+  },
+  {
+   "@id": "#value-baseline-paper9_mixed_dm_constraints-neff_scenario",
+   "@type": "PropertyValue",
+   "exampleOfWork": {
+    "@id": "#param-neff_scenario"
+   },
+   "name": "neff_scenario",
+   "value": "sm_plus_sterile_plus_wimp"
+  },
+  {
+   "@id": "#value-baseline-paper9_mixed_dm_constraints-post_capture_cooling",
+   "@type": "PropertyValue",
+   "exampleOfWork": {
+    "@id": "#param-post_capture_cooling"
+   },
+   "name": "post_capture_cooling",
+   "value": "include_all_three"
+  },
+  {
+   "@id": "urn:uuid:0bfa1fdd-5d54-5faf-9a74-f3dcf9ba493e",
+   "@type": "CreateAction",
+   "actionStatus": "http://schema.org/CompletedActionStatus",
+   "agent": {
+    "@id": "mailto:nesar1202@gmail.com"
+   },
+   "description": "ASTRA_MIXED_DM_GRID=grid_60 python3 analysis/paper9_solar_capture_analysis.py --out results/baseline/paper9_mixed_dm_constraints.png",
+   "endTime": "2026-11-16T18:39:39.500+00:00",
+   "instrument": {
+    "@id": "git@github.com:nesar-ai-assistant/lz-dark-sector-bridge.git#tool/paper9_mixed_dm_constraints"
+   },
+   "name": "run of `paper9_mixed_dm_constraints` in universe `baseline`",
+   "object": [
+    {
+     "@id": "pyproject.toml"
+    },
+    {
+     "@id": "uv.lock"
+    },
+    {
+     "@id": ".python-version"
+    },
+    {
+     "@id": "papers/09_Solar_Capture_Inelastic_DM_LZ.pdf"
+    },
+    {
+     "@id": "analysis/paper9_solar_capture_analysis.py"
+    },
+    {
+     "@id": "tools/physics.py"
+    },
+    {
+     "@id": "#value-baseline-paper9_mixed_dm_constraints-mixed_dm_grid"
+    },
+    {
+     "@id": "#value-baseline-paper9_mixed_dm_constraints-neff_scenario"
+    },
+    {
+     "@id": "#value-baseline-paper9_mixed_dm_constraints-post_capture_cooling"
+    }
+   ],
+   "result": {
+    "@id": "results/baseline/paper9_mixed_dm_constraints.png"
+   },
+   "startTime": "2026-11-16T18:39:29.656+00:00"
+  },
+  {
+   "@id": "#control-baseline-paper9_mixed_dm_constraints",
+   "@type": "ControlAction",
+   "instrument": {
+    "@id": "#step-paper9_mixed_dm_constraints"
+   },
+   "name": "orchestration of `paper9_mixed_dm_constraints` in universe `baseline`",
+   "object": {
+    "@id": "urn:uuid:0bfa1fdd-5d54-5faf-9a74-f3dcf9ba493e"
+   }
+  },
+  {
+   "@id": "#value-baseline-paper9_solar_capture_vs_splitting-neff_scenario",
+   "@type": "PropertyValue",
+   "exampleOfWork": {
+    "@id": "#param-neff_scenario"
+   },
+   "name": "neff_scenario",
+   "value": "sm_plus_sterile_plus_wimp"
+  },
+  {
+   "@id": "#value-baseline-paper9_solar_capture_vs_splitting-post_capture_cooling",
+   "@type": "PropertyValue",
+   "exampleOfWork": {
+    "@id": "#param-post_capture_cooling"
+   },
+   "name": "post_capture_cooling",
+   "value": "include_all_three"
+  },
+  {
+   "@id": "urn:uuid:10a19157-263f-5dd6-bcf5-5018e8f34d31",
+   "@type": "CreateAction",
+   "actionStatus": "http://schema.org/CompletedActionStatus",
+   "agent": {
+    "@id": "mailto:nesar1202@gmail.com"
+   },
+   "description": "python3 analysis/paper9_solar_capture_analysis.py --out results/baseline/paper9_solar_capture_vs_splitting.png",
+   "endTime": "2026-11-16T18:39:39.691+00:00",
+   "instrument": {
+    "@id": "git@github.com:nesar-ai-assistant/lz-dark-sector-bridge.git#tool/paper9_solar_capture_vs_splitting"
+   },
+   "name": "run of `paper9_solar_capture_vs_splitting` in universe `baseline`",
+   "object": [
+    {
+     "@id": "pyproject.toml"
+    },
+    {
+     "@id": "uv.lock"
+    },
+    {
+     "@id": ".python-version"
+    },
+    {
+     "@id": "papers/09_Solar_Capture_Inelastic_DM_LZ.pdf"
+    },
+    {
+     "@id": "analysis/paper9_solar_capture_analysis.py"
+    },
+    {
+     "@id": "tools/physics.py"
+    },
+    {
+     "@id": "#value-baseline-paper9_solar_capture_vs_splitting-neff_scenario"
+    },
+    {
+     "@id": "#value-baseline-paper9_solar_capture_vs_splitting-post_capture_cooling"
+    }
+   ],
+   "result": {
+    "@id": "results/baseline/paper9_solar_capture_vs_splitting.png"
+   },
+   "startTime": "2026-11-16T18:39:29.641+00:00"
+  },
+  {
+   "@id": "#control-baseline-paper9_solar_capture_vs_splitting",
+   "@type": "ControlAction",
+   "instrument": {
+    "@id": "#step-paper9_solar_capture_vs_splitting"
+   },
+   "name": "orchestration of `paper9_solar_capture_vs_splitting` in universe `baseline`",
+   "object": {
+    "@id": "urn:uuid:10a19157-263f-5dd6-bcf5-5018e8f34d31"
+   }
+  },
+  {
+   "@id": "#value-high-res-mixed-dm-paper9_bbn_predictions-neff_scenario",
+   "@type": "PropertyValue",
+   "exampleOfWork": {
+    "@id": "#param-neff_scenario"
+   },
+   "name": "neff_scenario",
+   "value": "sm_plus_sterile_plus_wimp"
+  },
+  {
+   "@id": "#value-high-res-mixed-dm-paper9_bbn_predictions-post_capture_cooling",
+   "@type": "PropertyValue",
+   "exampleOfWork": {
+    "@id": "#param-post_capture_cooling"
+   },
+   "name": "post_capture_cooling",
+   "value": "include_all_three"
+  },
+  {
+   "@id": "urn:uuid:8721774c-a8eb-54c1-941f-ed43d82e4c11",
+   "@type": "CreateAction",
+   "actionStatus": "http://schema.org/CompletedActionStatus",
+   "agent": {
+    "@id": "mailto:nesar1202@gmail.com"
+   },
+   "description": "python3 analysis/paper9_solar_capture_analysis.py --out results/high-res-mixed-dm/paper9_bbn_predictions.png",
+   "endTime": "2026-11-16T18:39:49.492+00:00",
+   "instrument": {
+    "@id": "git@github.com:nesar-ai-assistant/lz-dark-sector-bridge.git#tool/paper9_bbn_predictions"
+   },
+   "name": "run of `paper9_bbn_predictions` in universe `high-res-mixed-dm`",
+   "object": [
+    {
+     "@id": "pyproject.toml"
+    },
+    {
+     "@id": "uv.lock"
+    },
+    {
+     "@id": ".python-version"
+    },
+    {
+     "@id": "papers/09_Solar_Capture_Inelastic_DM_LZ.pdf"
+    },
+    {
+     "@id": "analysis/paper9_solar_capture_analysis.py"
+    },
+    {
+     "@id": "tools/physics.py"
+    },
+    {
+     "@id": "#value-high-res-mixed-dm-paper9_bbn_predictions-neff_scenario"
+    },
+    {
+     "@id": "#value-high-res-mixed-dm-paper9_bbn_predictions-post_capture_cooling"
+    }
+   ],
+   "result": {
+    "@id": "results/high-res-mixed-dm/paper9_bbn_predictions.png"
+   },
+   "startTime": "2026-11-16T18:39:39.643+00:00"
+  },
+  {
+   "@id": "#control-high-res-mixed-dm-paper9_bbn_predictions",
+   "@type": "ControlAction",
+   "instrument": {
+    "@id": "#step-paper9_bbn_predictions"
+   },
+   "name": "orchestration of `paper9_bbn_predictions` in universe `high-res-mixed-dm`",
+   "object": {
+    "@id": "urn:uuid:8721774c-a8eb-54c1-941f-ed43d82e4c11"
+   }
+  },
+  {
+   "@id": "#value-high-res-mixed-dm-paper9_higgsino_exclusion-neff_scenario",
+   "@type": "PropertyValue",
+   "exampleOfWork": {
+    "@id": "#param-neff_scenario"
+   },
+   "name": "neff_scenario",
+   "value": "sm_plus_sterile_plus_wimp"
+  },
+  {
+   "@id": "#value-high-res-mixed-dm-paper9_higgsino_exclusion-post_capture_cooling",
+   "@type": "PropertyValue",
+   "exampleOfWork": {
+    "@id": "#param-post_capture_cooling"
+   },
+   "name": "post_capture_cooling",
+   "value": "include_all_three"
+  },
+  {
+   "@id": "urn:uuid:3889e688-8944-5741-b793-f87f011faa2b",
+   "@type": "CreateAction",
+   "actionStatus": "http://schema.org/CompletedActionStatus",
+   "agent": {
+    "@id": "mailto:nesar1202@gmail.com"
+   },
+   "description": "python3 analysis/paper9_solar_capture_analysis.py --out results/high-res-mixed-dm/paper9_higgsino_exclusion.png",
+   "endTime": "2026-11-16T18:39:49.405+00:00",
+   "instrument": {
+    "@id": "git@github.com:nesar-ai-assistant/lz-dark-sector-bridge.git#tool/paper9_higgsino_exclusion"
+   },
+   "name": "run of `paper9_higgsino_exclusion` in universe `high-res-mixed-dm`",
+   "object": [
+    {
+     "@id": "pyproject.toml"
+    },
+    {
+     "@id": "uv.lock"
+    },
+    {
+     "@id": ".python-version"
+    },
+    {
+     "@id": "papers/09_Solar_Capture_Inelastic_DM_LZ.pdf"
+    },
+    {
+     "@id": "analysis/paper9_solar_capture_analysis.py"
+    },
+    {
+     "@id": "tools/physics.py"
+    },
+    {
+     "@id": "#value-high-res-mixed-dm-paper9_higgsino_exclusion-neff_scenario"
+    },
+    {
+     "@id": "#value-high-res-mixed-dm-paper9_higgsino_exclusion-post_capture_cooling"
+    }
+   ],
+   "result": {
+    "@id": "results/high-res-mixed-dm/paper9_higgsino_exclusion.png"
+   },
+   "startTime": "2026-11-16T18:39:39.777+00:00"
+  },
+  {
+   "@id": "#control-high-res-mixed-dm-paper9_higgsino_exclusion",
+   "@type": "ControlAction",
+   "instrument": {
+    "@id": "#step-paper9_higgsino_exclusion"
+   },
+   "name": "orchestration of `paper9_higgsino_exclusion` in universe `high-res-mixed-dm`",
+   "object": {
+    "@id": "urn:uuid:3889e688-8944-5741-b793-f87f011faa2b"
+   }
+  },
+  {
+   "@id": "#value-high-res-mixed-dm-paper9_mixed_dm_constraints-mixed_dm_grid",
+   "@type": "PropertyValue",
+   "exampleOfWork": {
+    "@id": "#param-mixed_dm_grid"
+   },
+   "name": "mixed_dm_grid",
+   "value": "grid_120"
+  },
+  {
+   "@id": "#value-high-res-mixed-dm-paper9_mixed_dm_constraints-neff_scenario",
+   "@type": "PropertyValue",
+   "exampleOfWork": {
+    "@id": "#param-neff_scenario"
+   },
+   "name": "neff_scenario",
+   "value": "sm_plus_sterile_plus_wimp"
+  },
+  {
+   "@id": "#value-high-res-mixed-dm-paper9_mixed_dm_constraints-post_capture_cooling",
+   "@type": "PropertyValue",
+   "exampleOfWork": {
+    "@id": "#param-post_capture_cooling"
+   },
+   "name": "post_capture_cooling",
+   "value": "include_all_three"
+  },
+  {
+   "@id": "urn:uuid:2c004102-b442-5752-8f9b-d773ec59561c",
+   "@type": "CreateAction",
+   "actionStatus": "http://schema.org/CompletedActionStatus",
+   "agent": {
+    "@id": "mailto:nesar1202@gmail.com"
+   },
+   "description": "ASTRA_MIXED_DM_GRID=grid_120 python3 analysis/paper9_solar_capture_analysis.py --out results/high-res-mixed-dm/paper9_mixed_dm_constraints.png",
+   "endTime": "2026-11-16T18:39:49.503+00:00",
+   "instrument": {
+    "@id": "git@github.com:nesar-ai-assistant/lz-dark-sector-bridge.git#tool/paper9_mixed_dm_constraints"
+   },
+   "name": "run of `paper9_mixed_dm_constraints` in universe `high-res-mixed-dm`",
+   "object": [
+    {
+     "@id": "pyproject.toml"
+    },
+    {
+     "@id": "uv.lock"
+    },
+    {
+     "@id": ".python-version"
+    },
+    {
+     "@id": "papers/09_Solar_Capture_Inelastic_DM_LZ.pdf"
+    },
+    {
+     "@id": "analysis/paper9_solar_capture_analysis.py"
+    },
+    {
+     "@id": "tools/physics.py"
+    },
+    {
+     "@id": "#value-high-res-mixed-dm-paper9_mixed_dm_constraints-mixed_dm_grid"
+    },
+    {
+     "@id": "#value-high-res-mixed-dm-paper9_mixed_dm_constraints-neff_scenario"
+    },
+    {
+     "@id": "#value-high-res-mixed-dm-paper9_mixed_dm_constraints-post_capture_cooling"
+    }
+   ],
+   "result": {
+    "@id": "results/high-res-mixed-dm/paper9_mixed_dm_constraints.png"
+   },
+   "startTime": "2026-11-16T18:39:39.797+00:00"
+  },
+  {
+   "@id": "#control-high-res-mixed-dm-paper9_mixed_dm_constraints",
+   "@type": "ControlAction",
+   "instrument": {
+    "@id": "#step-paper9_mixed_dm_constraints"
+   },
+   "name": "orchestration of `paper9_mixed_dm_constraints` in universe `high-res-mixed-dm`",
+   "object": {
+    "@id": "urn:uuid:2c004102-b442-5752-8f9b-d773ec59561c"
+   }
+  },
+  {
+   "@id": "#value-high-res-mixed-dm-paper9_solar_capture_vs_splitting-neff_scenario",
+   "@type": "PropertyValue",
+   "exampleOfWork": {
+    "@id": "#param-neff_scenario"
+   },
+   "name": "neff_scenario",
+   "value": "sm_plus_sterile_plus_wimp"
+  },
+  {
+   "@id": "#value-high-res-mixed-dm-paper9_solar_capture_vs_splitting-post_capture_cooling",
+   "@type": "PropertyValue",
+   "exampleOfWork": {
+    "@id": "#param-post_capture_cooling"
+   },
+   "name": "post_capture_cooling",
+   "value": "include_all_three"
+  },
+  {
+   "@id": "urn:uuid:3ceb9e69-412d-5399-8167-2fc778062ca6",
+   "@type": "CreateAction",
+   "actionStatus": "http://schema.org/CompletedActionStatus",
+   "agent": {
+    "@id": "mailto:nesar1202@gmail.com"
+   },
+   "description": "python3 analysis/paper9_solar_capture_analysis.py --out results/high-res-mixed-dm/paper9_solar_capture_vs_splitting.png",
+   "endTime": "2026-11-16T18:39:49.515+00:00",
+   "instrument": {
+    "@id": "git@github.com:nesar-ai-assistant/lz-dark-sector-bridge.git#tool/paper9_solar_capture_vs_splitting"
+   },
+   "name": "run of `paper9_solar_capture_vs_splitting` in universe `high-res-mixed-dm`",
+   "object": [
+    {
+     "@id": "pyproject.toml"
+    },
+    {
+     "@id": "uv.lock"
+    },
+    {
+     "@id": ".python-version"
+    },
+    {
+     "@id": "papers/09_Solar_Capture_Inelastic_DM_LZ.pdf"
+    },
+    {
+     "@id": "analysis/paper9_solar_capture_analysis.py"
+    },
+    {
+     "@id": "tools/physics.py"
+    },
+    {
+     "@id": "#value-high-res-mixed-dm-paper9_solar_capture_vs_splitting-neff_scenario"
+    },
+    {
+     "@id": "#value-high-res-mixed-dm-paper9_solar_capture_vs_splitting-post_capture_cooling"
+    }
+   ],
+   "result": {
+    "@id": "results/high-res-mixed-dm/paper9_solar_capture_vs_splitting.png"
+   },
+   "startTime": "2026-11-16T18:39:39.913+00:00"
+  },
+  {
+   "@id": "#control-high-res-mixed-dm-paper9_solar_capture_vs_splitting",
+   "@type": "ControlAction",
+   "instrument": {
+    "@id": "#step-paper9_solar_capture_vs_splitting"
+   },
+   "name": "orchestration of `paper9_solar_capture_vs_splitting` in universe `high-res-mixed-dm`",
+   "object": {
+    "@id": "urn:uuid:3ceb9e69-412d-5399-8167-2fc778062ca6"
+   }
+  },
+  {
+   "@id": "https://pypi.org/project/lightcone-cli/0.5.0/",
+   "@type": "SoftwareApplication",
+   "name": "lightcone-cli",
+   "softwareVersion": "0.5.0",
+   "url": "https://pypi.org/project/lightcone-cli/0.5.0/"
+  },
+  {
+   "@id": "urn:uuid:19ccba41-37bd-5048-8ac4-5bfc9a5b5b53",
+   "@type": "CreateAction",
+   "actionStatus": "http://schema.org/CompletedActionStatus",
+   "agent": {
+    "@id": "mailto:nesar1202@gmail.com"
+   },
+   "description": "one materialization run, starting from commit 3a7f5422b96cdb2219269604be594955129b099e",
+   "endTime": "2026-11-16T18:39:49.515+00:00",
+   "instrument": {
+    "@id": "astra.yaml"
+   },
+   "name": "lc materialize at 3a7f542",
+   "result": [
+    {
+     "@id": "results/baseline/paper9_bbn_predictions.png"
+    },
+    {
+     "@id": "results/baseline/paper9_higgsino_exclusion.png"
+    },
+    {
+     "@id": "results/baseline/paper9_mixed_dm_constraints.png"
+    },
+    {
+     "@id": "results/baseline/paper9_solar_capture_vs_splitting.png"
+    },
+    {
+     "@id": "results/high-res-mixed-dm/paper9_bbn_predictions.png"
+    },
+    {
+     "@id": "results/high-res-mixed-dm/paper9_higgsino_exclusion.png"
+    },
+    {
+     "@id": "results/high-res-mixed-dm/paper9_mixed_dm_constraints.png"
+    },
+    {
+     "@id": "results/high-res-mixed-dm/paper9_solar_capture_vs_splitting.png"
+    }
+   ],
+   "startTime": "2026-11-16T18:39:29.641+00:00"
+  },
+  {
+   "@id": "#organize-3a7f542",
+   "@type": "OrganizeAction",
+   "instrument": {
+    "@id": "https://pypi.org/project/lightcone-cli/0.5.0/"
+   },
+   "name": "scheduling of the run at 3a7f542",
+   "object": [
+    {
+     "@id": "#control-baseline-paper9_bbn_predictions"
+    },
+    {
+     "@id": "#control-baseline-paper9_higgsino_exclusion"
+    },
+    {
+     "@id": "#control-baseline-paper9_mixed_dm_constraints"
+    },
+    {
+     "@id": "#control-baseline-paper9_solar_capture_vs_splitting"
+    },
+    {
+     "@id": "#control-high-res-mixed-dm-paper9_bbn_predictions"
+    },
+    {
+     "@id": "#control-high-res-mixed-dm-paper9_higgsino_exclusion"
+    },
+    {
+     "@id": "#control-high-res-mixed-dm-paper9_mixed_dm_constraints"
+    },
+    {
+     "@id": "#control-high-res-mixed-dm-paper9_solar_capture_vs_splitting"
+    }
+   ],
+   "result": {
+    "@id": "urn:uuid:19ccba41-37bd-5048-8ac4-5bfc9a5b5b53"
+   }
   },
   {
    "@id": "https://w3id.org/ro/wfrun/process/0.5",
