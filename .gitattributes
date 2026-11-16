@@ -14,3 +14,4 @@ data/** annex.largefiles=anything
 .datalad/environments/*/image annex.largefiles=anything
 results/**/.*.manifest.json annex.largefiles=nothing
 docs/** annex.largefiles=nothing
+docs/results/** annex.largefiles=nothing
